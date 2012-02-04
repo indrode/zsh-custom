@@ -31,7 +31,6 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 
 #tools
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
-alias gmail="curl -u indro.de@gmail.com --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'"
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
