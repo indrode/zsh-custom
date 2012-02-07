@@ -48,8 +48,8 @@ function init_simfy {
   solr-server
 	rvm use ree
   be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
-  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/pr0xy/Projects/simfy/solr/core" 2>&1 >/dev/null
-  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/pr0xy/Projects/simfy/solr/core" 2>&1 >/dev/null
+  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=$HOME/Projects/simfy/solr/core" 2>&1 >/dev/null
+  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=$HOME/Projects/simfy/solr/core" 2>&1 >/dev/null
 }
 
 # run guard
