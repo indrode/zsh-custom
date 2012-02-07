@@ -92,11 +92,9 @@ function build {
   export CHECK_DATABASE=true
   # export RSPEC_ORDER="--order rand"
   # export RSPEC_ORDER="--order rand:60271"
-
-  bundle install --quiet
+  
   mkdir -p tmp
-  bundle exec rake db:migrate db:test:prepare
-
+  
   case $1 in
     "cucumber")
       bundle exec cucumber -p default features/plain
