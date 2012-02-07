@@ -2,13 +2,12 @@
 # - this one rules them all -
 # ---------------------------
 
+# pr0xy settings (indrode.com)
+
 # path to oh-my-zsh configuration
 ZSH=$HOME/.oh-my-zsh
 ZSHCUSTOM=$HOME/.oh-my-zsh/custom
 ZSH_THEME="indro"
-
-#to be removed:
-df -hl
 
 # aliases, custom functions, other configs
 # . ~/.zsh/aliases/common.zsh
@@ -51,4 +50,8 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     while read -r COMMAND; do
         alias $COMMAND="nocorrect $COMMAND"
     done < $ZSHCUSTOM/zsh_nocorrect
+fi
+
+if [ -f "$HOME/.todos" ]; then
+  . "$HOME/.todos"
 fi

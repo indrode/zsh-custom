@@ -37,6 +37,7 @@ alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 #rmv
+alias rvm-set='rvm --default use'
 alias rvm-restart='rvm_reload_flag=1 source '\''/Users/pr0xy/.rvm/scripts/rvm'\'''
 
 #redis
