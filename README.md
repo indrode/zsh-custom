@@ -3,10 +3,16 @@ I am a fan of [ZSH](http://www.zsh.org/) and I use the configuration framework [
 
 This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup which works fine for me. It includes some personal configurations, so it is not made to be a template, but it may provide some re-usable ideas.
 
+## Setting up .zshrc
+
 To keep all customized files within the repository, my `~/.zshrc` file looks like this:
 
 	# HINT: type 'ohmyzsh' to edit shell config files
 	. ~/.oh-my-zsh/custom/zshrc
+
+## Notes
+
+To get the `gmail` command work without having to enter your password manually each time, create a file called `.gmail` in the `/custom` folder that includes your Gmail password (and nothing else). Now, when running `gmail`, the password is copied into the clipboard first.
 
 My personal zsh theme `indro` is kept in it's usual place in `~/.oh-my-zsh/themes` and is currently not checked into revision control.
 
