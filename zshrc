@@ -40,8 +40,9 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
-[[ -s "/Users/pr0xy/.rvm/scripts/rvm" ]] && source "/Users/pr0xy/.rvm/scripts/rvm"  # this loads RVM into a shell session.
-export PATH=/usr/local/bin:/Users/pr0xy/.rvm/gems/ruby-1.9.3-p0/bin:/Users/pr0xy/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/pr0xy/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/pr0xy/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+export PATH=/usr/local/bin:$HOME/.rvm/gems/ree-1.8.7-2010.02/bin:$HOME/.rvm/gems/ruby-1.9.3-p0/bin:$HOME/.rvm/gems/ruby-1.9.3-p0@global/bin:$HOME/.rvm/rubies/ruby-1.9.3-p0/bin:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+
 export SOLR_BIN=/usr/local/Cellar/solr/3.5.0/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
