@@ -50,7 +50,9 @@ function init_simfy {
   be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$1/Projects/simfy/solr/core" 2>&1 >/dev/null
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$1/Projects/simfy/solr/core" 2>&1 >/dev/null
-  echo "try running: script/services start_redis ./tmp/redis/redis_test"
+  echo
+  echo "to run builds locally:"
+  echo "build (cucumber|cucumber_admin|cucumber_api|cucumber_search|spec|spec_integration)"
 }
 
 # run guard
@@ -78,4 +80,49 @@ function repeat() {
   do
     "$@"
   done
+}
+
+function build {
+  export RUBY_HEAP_MIN_SLOTS=500000
+  export RUBY_HEAP_SLOTS_INCREMENT=500000
+  export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
+  export RUBY_GC_MALLOC_LIMIT=100000000
+  export RUBY_HEAP_FREE_MIN=500000
+  export RAILS_ENV=test
+  # export TEST_DB=$1
+  export CHECK_DATABASE=true
+  # export RSPEC_ORDER="--order rand"
+  # export RSPEC_ORDER="--order rand:60271"
+
+  bundle install --quiet
+  mkdir -p tmp
+  bundle exec rake db:migrate db:test:prepare
+
+  case $1 in
+    "cucumber")
+      bundle exec cucumber -p default features/plain
+      ;;
+    "cucumber_admin")
+      bundle exec cucumber -p default features/admin
+      ;;
+    "cucumber_api")
+      bundle exec cucumber -p default features/api
+      ;;
+    "cucumber_search")
+      bundle exec cucumber -p search
+      ;;
+    "spec")
+      bundle exec rspec `find spec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration` $RSPEC_ORDER
+      ;;
+    "spec_integration")
+      bundle exec rspec spec/integration $RSPEC_ORDER
+      ;;
+    *)
+      unset TEST_DB
+      bundle exec spec `find rspec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration` $RSPEC_ORDER
+      SPORK_INTEGRATION=true bundle exec rspec spec/integration --order random
+      bundle exec cucumber -p default features/plain
+      bundle exec cucumber -p search features/search
+      ;;
+  esac
 }
