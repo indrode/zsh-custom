@@ -65,8 +65,8 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
 
-echo "${txtylw}You have $(gmail gmail) unread emails.${txtrst}"
-echo "${txtylw}You have $(gmail simfy) unread emails.${txtrst}"
+echo "${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
+echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 
 if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
