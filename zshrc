@@ -9,6 +9,18 @@ ZSH=$HOME/.oh-my-zsh
 ZSHCUSTOM=$HOME/.oh-my-zsh/custom
 ZSH_THEME="indro"
 
+# simpler bash text colors and attributes
+txtund=$(tput sgr 0 1)    # underline
+txtbld=$(tput bold)       # bold
+txtred=$(tput setaf 1)    # red
+txtgrn=$(tput setaf 2)    # green
+txtylw=$(tput setaf 3)    # yellow
+txtblu=$(tput setaf 4)    # blue
+txtpur=$(tput setaf 5)    # purple
+txtcyn=$(tput setaf 6)    # cyan
+txtwht=$(tput setaf 7)    # white
+txtrst=$(tput sgr0)       # text reset
+
 # aliases, custom functions, other configs
 # . ~/.zsh/aliases/common.zsh
 # . ~/.zsh/functions/
@@ -53,6 +65,10 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
 
+echo "${txtylw}You have $(gmail gmail) unread emails.${txtrst}"
+echo "${txtylw}You have $(gmail simfy) unread emails.${txtrst}"
+
 if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
+

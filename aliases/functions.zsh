@@ -11,7 +11,7 @@ function cdmy {
 
 # opens an application from /Applications
 function go {
-  open "/Applications/$1.app"     
+  open "/Applications/$1.app"
 }
 
 # open man pages in Preview
@@ -20,25 +20,24 @@ function pdfman() {
 }
 
 # todo list manager v2
-# lets you add to .todos or remove-all (kill)
 function todo {
+  ok_notice="${txtylw}--> OK${txtrst}"
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ 1 == 1 ]; do
     read -e TODO
     case $TODO in
-      list) . "$HOME/.todos" && echo "--> done!";;
-      quit) echo "--> bye!" && break;;
+      list) . "$HOME/.todos" && echo "$ok_notice";;
+      quit) echo "$ok_notice (bye!)" && break;;
       help) echo "--> commands: help, kill, list, quit";;
-      kill) rm ~/.todos && echo "echo ' '" >> ~/.todos && echo "--> all tasks removed!";;
-      * ) echo "echo -e '- $TODO'" >> ~/.todos && echo "--> task added!";;
+      kill) rm ~/.todos && echo "echo ' '" >> ~/.todos && echo "$ok_notice (all tasks removed)";;
+      *) echo "echo -e '- $TODO'" >> ~/.todos && echo "$ok_notice (task added)";;
     esac
   done
 }
 
 # check number of unread emails
 function gmail {
-  cat ~/.oh-my-zsh/custom/.gmail | pbcopy
-  curl -u indro.de@gmail.com --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
+  curl -u indro.de@$1.com:$(cat ~/.oh-my-zsh/custom/.$1) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
 }
 
 # all-in-one simfy launch
