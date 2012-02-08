@@ -11,7 +11,7 @@ function cdmy {
 
 # opens an application from /Applications
 function go {
-  open "/Applications/$1.app"
+  open "/Applications/$1.app"     
 }
 
 # open man pages in Preview
@@ -41,6 +41,23 @@ function gmail {
   curl -u indro.de@gmail.com --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
 }
 
+# all-in-one simfy launch
+function simfy {
+  case $1 in
+  "help")
+    echo
+    echo "run builds locally:"
+    echo "build (simfy|cucumber|cucumber_admin|cucumber_api|cucumber_search|spec|spec_integration)"
+    ;;
+  *)
+    cd $HOME/Projects/simfy
+    init_simfy
+    echo "run 'simfy help' for some hints"
+    ;;
+  esac 
+
+}
+
 # simfy specific initializations
 # loads ree, redis, solr, and solr cores
 function init_simfy {
@@ -49,9 +66,7 @@ function init_simfy {
   be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
-  echo
-  echo "to run builds locally:"
-  echo "build (cucumber|cucumber_admin|cucumber_api|cucumber_search|spec|spec_integration)"
+
 }
 
 # run guard
