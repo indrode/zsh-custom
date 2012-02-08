@@ -51,6 +51,7 @@ function simfy {
   *)
     cd $HOME/Projects/simfy
     init_simfy
+    git status
     echo "run 'simfy help' for some hints"
     ;;
   esac 
