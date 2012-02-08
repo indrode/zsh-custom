@@ -112,14 +112,16 @@ function build {
       bundle exec rspec `find spec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration`
       ;;
     "spec_integration")
-      bundle exec rspec spec/integration $RSPEC_ORDER
+      bundle exec rspec spec/integration --order random
       ;;
     *)
       unset TEST_DB
-      bundle exec spec `find rspec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration` $RSPEC_ORDER
+      bundle exec rspec `find spec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration` $RSPEC_ORDER
       SPORK_INTEGRATION=true bundle exec rspec spec/integration --order random
       bundle exec cucumber -p default features/plain
-      bundle exec cucumber -p search features/search
+      bundle exec cucumber -p search
+      bundle exec cucumber -p default features/admin
+      bundle exec cucumber -p default features/api
       ;;
   esac
 }
