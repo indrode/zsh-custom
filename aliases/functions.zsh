@@ -64,6 +64,7 @@ function init_simfy {
   solr-server
   rvm use ree
   be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
+  script/services start_redis ./tmp/redis/redis_test
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
 
