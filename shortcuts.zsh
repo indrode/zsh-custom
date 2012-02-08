@@ -3,5 +3,4 @@
 #
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
-simfy=$HOME/Projects/simfy
 zshcustom=$HOME/.oh-my-zsh/custom
