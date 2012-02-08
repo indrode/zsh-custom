@@ -106,7 +106,7 @@ function build {
   # export TEST_DB=$1
   export CHECK_DATABASE=true
   # export RSPEC_ORDER="--order rand"
-  export RSPEC_ORDER="--order rand:60271"
+  # export RSPEC_ORDER="--order rand:60271"
   
   mkdir -p tmp
   
@@ -131,7 +131,7 @@ function build {
       ;;
     *)
       unset TEST_DB
-      bundle exec rspec `find spec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration` $RSPEC_ORDER
+      bundle exec rspec `find spec -maxdepth 1 -mindepth 1 -type d | grep -v spec/integration`
       SPORK_INTEGRATION=true bundle exec rspec spec/integration --order random
       bundle exec cucumber -p default features/plain
       bundle exec cucumber -p search
