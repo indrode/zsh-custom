@@ -7,7 +7,7 @@
 alias P='grep --color=auto'
 
 #alias
-alias aliases="cat $ZSHCUSTOM/aliases/general.zsh"
+alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
 alias aliases-open="subl $ZSHCUSTOM/aliases/general.zsh"
 alias aliases-reload="source $ZSHCUSTOM/aliases/general.zsh"
 
