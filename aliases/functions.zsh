@@ -24,13 +24,13 @@ function todo {
   ok_notice="${txtylw}--> OK${txtrst}"
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ true ]; do
-    read TODO
-    case $TODO in
+    read todo
+    case $todo in
       "list") . "$HOME/.todos" && echo "$ok_notice";;
       "quit") echo "$ok_notice (bye!)" && break;;
       "help") echo "--> commands: help, kill, list, quit";;
       "kill") rm ~/.todos && echo "echo ' '" >> ~/.todos && echo "$ok_notice (all tasks removed)";;
-      *) echo "echo -e '- $TODO'" >> ~/.todos && echo "$ok_notice (task added)";;
+      *) echo "echo -e '- $todo'" >> ~/.todos && echo "$ok_notice (task added)";;
     esac
   done
 }
