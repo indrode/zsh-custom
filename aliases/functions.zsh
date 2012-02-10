@@ -46,24 +46,37 @@ function simfy {
   "help")
     cat $ZSHCUSTOM/.help
     ;;
+  "init")
+    init simfy
+    ;;
   *)
     cd $HOME/Projects/simfy
-    init_simfy
+    init simfy
     git status
     echo "run 'simfy help' for some hints"
     ;;
   esac
 }
 
-# simfy specific initializations
-# loads ree, redis, solr, and solr cores
-function init_simfy {
-  solr-server
-  rvm use ree
-  be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
-  script/services start_redis ./tmp/redis/redis_test
-  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
-  curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
+# project-specific initializations
+function init {
+  case $1 in
+    "simfy")
+      solr-server
+      rvm use ree
+      be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
+      script/services start_redis ./tmp/redis/redis_test
+      curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
+      curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null    
+      ;;
+    "help")
+      echo "help not available yet"
+      ;;
+    *)
+      echo "project not found"
+      exit 1
+      ;;
+  esac
 }
 
 # run guard
