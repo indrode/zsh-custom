@@ -71,9 +71,18 @@ df -hl
 echo
 echo "${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
 echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
+echo
 
-# display todo list items
+# global todos (stored in the cloud)
+if [ -f "$HOME/Dropbox/.todos" ]; then
+  echo "${txtcyn}Global TODOs:${txtrst}"
+  . "$HOME/Dropbox/.todos"
+fi
+
+# local todos
 if [ -f "$HOME/.todos" ]; then
+  echo "${txtcyn}Local TODOs:${txtrst}"
   . "$HOME/.todos"
 fi
+
 

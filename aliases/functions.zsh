@@ -20,17 +20,34 @@ function pdfman() {
 }
 
 # todo list manager v2
+# run:
+#   todo <scope>
+# where scope is 'global' or 'local'
 function todo {
   ok_notice="${txtylw}--> OK${txtrst}"
+  case $1 in
+    "global")
+      echo "${txtgrn}${txtbld}<<GLOBAL SCOPE>>${txtrst}"
+      todos_file=$HOME/Dropbox/.todos
+      ;;
+    "local")
+      echo "${txtgrn}${txtbld}<<LOCAL SCOPE>>${txtrst}"
+      todos_file=$HOME/.todos
+      ;;
+    *)
+      echo "no scope specified!"
+      exit 1
+      ;;
+  esac
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ true ]; do
     read todo
     case $todo in
-      "list") . "$HOME/.todos" && echo "$ok_notice";;
+      "list") . "$todos_file" && echo "$ok_notice";;
       "quit") echo "$ok_notice (bye!)" && break;;
       "help") echo "--> commands: help, kill, list, quit";;
-      "kill") rm ~/.todos && echo "echo ' '" >> ~/.todos && echo "$ok_notice (all tasks removed)";;
-      *) echo "echo -e '- $todo'" >> ~/.todos && echo "$ok_notice (task added)";;
+      "kill") rm $todos_file && echo "" >> $todos_file && echo "$ok_notice (all tasks removed)";;
+      *) echo "echo -e '- $todo'" >> $todos_file && echo "$ok_notice (task added)";;
     esac
   done
 }
@@ -70,10 +87,10 @@ function init {
       curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null    
       ;;
     "help")
-      echo "help not available yet"
+      echo "Help not available yet!"
       ;;
     *)
-      echo "project not found"
+      echo "Project not found!"
       exit 1
       ;;
   esac
