@@ -3,8 +3,14 @@
 # ---------------------------------------------
 
 # exiting (not so) gracefully by killing the process
-function exit_gracefully {
-  echo "${txtred}kthxbye...${txtrst}"
+function angry_exit {
+  echo "${txtred}⚡⚡⚡ kthxbye!${txtrst}"
+  kill -SIGINT $$
+}
+
+# exiting (not so) gracefully by killing the process
+function happy_exit {
+  echo "${txtgrn}☼ kthxbye...${txtrst}"
   kill -SIGINT $$
 }
 
@@ -46,7 +52,7 @@ function todo {
       ;;
     *)
       echo "no scope specified!"
-      exit_gracefully
+      angry_exit
       ;;
   esac
   
@@ -61,6 +67,37 @@ function todo {
       *) echo "echo -e '- $todo'" >> $todos_file && echo "$ok_notice (task added)";;
     esac
   done
+}
+
+# swap-
+# stores small snippets, urls, etc. in cloud
+# options: 
+function swap {
+  ok_notice="${txtylw}--> OK${txtrst}"
+  source_file=$HOME/Dropbox/.swap
+  case $1 in
+    "kill")
+      rm $source_file && echo "" >> $source_file
+      echo "${ok_notice} (swap erased)"
+      ;;
+    "set")
+      echo "${txtcyn}Add to swapfile:${txtrst}"
+      read todo
+      echo "echo -e $todo" >> $source_file
+      echo "${ok_notice} (swap written)"
+      ;;
+    "get")
+      . "$source_file"
+      ;;
+    "help")
+      echo "commands: get, set, kill, help"
+      echo "e.g. swap get"
+      ;;
+    *)
+      echo "swap what? (type 'swap help' for instructions)"
+      angry_exit
+      ;;
+  esac
 }
 
 # check number of unread emails
@@ -99,11 +136,11 @@ function init {
       ;;
     "help")
       echo "Help not available yet!"
-      exit_gracefully
+      angry_exit
       ;;
     *)
       echo "Project not found!"
-      exit_gracefully
+      angry_exit
       ;;
   esac
 }
