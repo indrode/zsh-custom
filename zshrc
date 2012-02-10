@@ -79,6 +79,8 @@ if [ -f "$HOME/Dropbox/.todos" ]; then
   . "$HOME/Dropbox/.todos"
 fi
 
+echo
+
 # local todos
 if [ -f "$HOME/.todos" ]; then
   echo "${txtcyn}Local TODOs:${txtrst}"
