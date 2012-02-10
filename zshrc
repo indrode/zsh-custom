@@ -4,10 +4,11 @@
 
 # pr0xy settings (indrode.com)
 
-# path to oh-my-zsh configuration
+# global variables
 ZSH=$HOME/.oh-my-zsh
 ZSHCUSTOM=$HOME/.oh-my-zsh/custom
 ZSH_THEME="indro"
+MAILNAME="indro.de"
 
 # simpler bash text colors and attributes
 txtund=$(tput sgr 0 1)    # underline
@@ -20,11 +21,6 @@ txtpur=$(tput setaf 5)    # purple
 txtcyn=$(tput setaf 6)    # cyan
 txtwht=$(tput setaf 7)    # white
 txtrst=$(tput sgr0)       # text reset
-
-# aliases, custom functions, other configs
-# . ~/.zsh/aliases/common.zsh
-# . ~/.zsh/functions/
-# . ~/.zsh/config.zsh
 
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh
@@ -39,17 +35,15 @@ alias ohmyzsh="subl $ZSH"
 # some oh-my-zsh settings
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git)
-plugins=(brew)
-plugins=(bundler)
-plugins=(osx)
+# which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
+# see: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
+# custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# example format: plugins=(rails git textmate ruby lighthouse)
+plugins=(git brew bundler osx gem)
 
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
+# customize to your needs...
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
