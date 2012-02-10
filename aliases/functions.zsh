@@ -76,6 +76,9 @@ function swap {
   ok_notice="${txtylw}--> OK${txtrst}"
   source_file=$HOME/Dropbox/.swap
   case $1 in
+    "status")
+      echo "${txtcyn}There are $(wc -w ~/Dropbox/.swap | cut -d " " -f8) words in the swapfile.${txtrst}"
+      ;;
     "kill")
       rm $source_file && echo "" >> $source_file
       echo "${ok_notice} (swap erased)"
@@ -83,14 +86,14 @@ function swap {
     "set")
       echo "${txtcyn}Add to swapfile:${txtrst}"
       read todo
-      echo "echo -e $todo" >> $source_file
+      echo "$todo" >> $source_file
       echo "${ok_notice} (swap written)"
       ;;
     "get")
-      . "$source_file"
+      cat $source_file
       ;;
     "help")
-      echo "commands: get, set, kill, help"
+      echo "commands: get, set, kill, status, help"
       echo "e.g. swap get"
       ;;
     *)

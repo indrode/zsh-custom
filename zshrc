@@ -67,6 +67,10 @@ fi
 # display info of locally mounted drives
 df -hl
 
+# display swapfile status
+echo
+swap status
+
 # display number of unread emails
 echo
 echo "${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
