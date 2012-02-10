@@ -1,3 +1,13 @@
+# ---------------------------------------------
+# - general functions for every day shell-ing -
+# ---------------------------------------------
+
+# exiting (not so) gracefully by killing the process
+function exit_gracefully {
+  echo "${txtred}kthxbye...${txtrst}"
+  kill -SIGINT $$
+}
+
 # add to nocorrect list
 function blacklist {
   echo "$1" >> ~/.oh-my-zsh/custom/zsh_nocorrect
@@ -36,9 +46,10 @@ function todo {
       ;;
     *)
       echo "no scope specified!"
-      exit 1
+      exit_gracefully
       ;;
   esac
+  
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ true ]; do
     read todo
@@ -88,10 +99,11 @@ function init {
       ;;
     "help")
       echo "Help not available yet!"
+      exit_gracefully
       ;;
     *)
       echo "Project not found!"
-      exit 1
+      exit_gracefully
       ;;
   esac
 }
