@@ -6,7 +6,7 @@ function blacklist {
 
 # go to project folder
 function cdmy {
-	cd ~/Projects/$1
+  cd ~/Projects/$1
 }
 
 # opens an application from /Applications
@@ -44,9 +44,7 @@ function gmail {
 function simfy {
   case $1 in
   "help")
-    echo
-    echo "run builds locally:"
-    echo "build (simfy|cucumber|cucumber_admin|cucumber_api|cucumber_search|spec|spec_integration)"
+    cat $ZSHCUSTOM/.help
     ;;
   *)
     cd $HOME/Projects/simfy
@@ -54,8 +52,7 @@ function simfy {
     git status
     echo "run 'simfy help' for some hints"
     ;;
-  esac 
-
+  esac
 }
 
 # simfy specific initializations
@@ -67,7 +64,6 @@ function init_simfy {
   script/services start_redis ./tmp/redis/redis_test
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
   curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
-
 }
 
 # run guard
