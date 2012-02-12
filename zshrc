@@ -64,6 +64,13 @@ fi
 # 3. unread emails count
 # 4. todo list items
 
+# display ascii art
+echo "${txtgrn}"
+echo "_  )   \_ |_  )"
+echo "  /  (  | |  / "
+echo "___|\__/ _|___|"
+echo "${txtrst}"
+
 # display info of locally mounted drives
 df -hl
 
