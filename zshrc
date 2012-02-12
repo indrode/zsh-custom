@@ -59,16 +59,18 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
 fi
 
 # startup items:
-# 1. last login info
-# 2. mounted drives status
-# 3. unread emails count
-# 4. todo list items
+# 1. ascii art zsh info
+# 2. last login info
+# 3. mounted drives status
+# 4. unread emails count
+# 5. todo list items
 
 # display ascii art
 echo "${txtgrn}"
 echo "_  )   \_ |_  )"
 echo "  /  (  | |  / "
-echo "___|\__/ _|___|"
+echo "___|\__/ _|___| <zsh>"
+echo "\nhttp://zsh.sourceforge.net/FAQ/"
 echo "${txtrst}"
 
 # display info of locally mounted drives
@@ -79,23 +81,18 @@ echo
 swap status
 
 # display number of unread emails
-echo
-echo "${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
+echo "\n${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
 echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
-echo
 
 # global todos (stored in the cloud)
 if [ -f "$HOME/Dropbox/.todos" ]; then
-  echo "${txtcyn}Global TODOs:${txtrst}"
+  echo "\n${txtcyn}Global TODOs:${txtrst}"
   . "$HOME/Dropbox/.todos"
 fi
 
-echo
-
 # local todos
 if [ -f "$HOME/.todos" ]; then
-  echo "${txtcyn}Local TODOs:${txtrst}"
+  echo "\n${txtcyn}Local TODOs:${txtrst}"
   . "$HOME/.todos"
 fi
-
 
