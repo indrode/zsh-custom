@@ -41,6 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # example format: plugins=(rails git textmate ruby lighthouse)
 plugins=(git brew bundler osx gem)
 
+# oh-my-zsh
 source $ZSH/oh-my-zsh.sh
 
 # customize to your needs...
@@ -96,3 +97,5 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
+# fink
+source /sw/bin/init.sh
