@@ -103,6 +103,20 @@ function swap {
   esac
 }
 
+# check or go to a drive volume
+function drive {
+  if [ -z "$1" ]; then
+    ( cd /Volumes && ls )
+  else
+    cd /Volumes/$1
+    # requires figlet (fink install figlet)
+    echo "${txtylw}"
+    figlet $1
+    echo "${txtrst}"
+    df -h |grep -i $1
+  fi
+}
+
 # check number of unread emails
 function gmail {
   curl -u $MAILNAME@$1.com:$(cat ~/.oh-my-zsh/custom/.$1) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
