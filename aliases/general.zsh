@@ -6,6 +6,9 @@
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'
 
+#command upgrades
+alias cp='cp -v'
+
 #alias
 alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
 alias aliases-open="subl $ZSHCUSTOM/aliases/general.zsh"
