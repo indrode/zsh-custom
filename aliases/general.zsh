@@ -4,7 +4,7 @@
 
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
-alias P='grep --color=auto'
+alias P='grep --color=auto -i'
 
 #alias
 alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
