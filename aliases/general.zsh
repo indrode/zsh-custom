@@ -60,5 +60,6 @@ alias hal-pid="ps -ef |grep ScreenSaverEngine |cut -c 6-"
 
 #stuff found online http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
+alias quiet="osascript -e 'set volume 0.5'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
