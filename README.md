@@ -10,6 +10,12 @@ To keep all customized files within the repository, my `~/.zshrc` file looks lik
 	# HINT: type 'ohmyzsh' to edit shell config files
 	. ~/.oh-my-zsh/custom/zshrc
 
+## Dependencies
+
+My setup includes some gimmicks that require `figlet` which can be installed via `Fink`, a package manager for OS X. To install Fink, follow the [Fink instructions](http://www.finkproject.org/download/srcdist.php). Once Fink is installed and package description files and patches are installed, install `figlet`.
+
+	fink install figlet
+
 ## Notes
 
 To get the `gmail` command work without having to enter your password manually each time, create a file called `.gmail` in the `/custom` folder that includes your Gmail password (and nothing else). Now, when running `gmail`, the password is copied into the clipboard first.
