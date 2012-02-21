@@ -98,4 +98,5 @@ if [ -f "$HOME/.todos" ]; then
 fi
 
 # fink
+# http://www.finkproject.org/download/srcdist.php
 source /sw/bin/init.sh
