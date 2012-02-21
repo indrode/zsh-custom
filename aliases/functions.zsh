@@ -77,7 +77,7 @@ function swap {
   source_file=$HOME/Dropbox/.swap
   case $1 in
     "status")
-      echo "${txtcyn}There are $(wc -w ~/Dropbox/.swap | cut -d "/" -f1) words in the swapfile.${txtrst}"
+      echo "${txtcyn}There are $(wc -w ~/Dropbox/.swap | cut -d "/" -f1 | tr -d ' ') words in the swapfile.${txtrst}"
       ;;
     "kill")
       rm $source_file && echo "" >> $source_file
