@@ -165,7 +165,9 @@ function init {
 
 # run guard
 function gg {
+  echo "preparing test DB..."
   be rake db:test:prepare
+  echo "running guard..."
   guard
 }
 
