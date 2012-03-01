@@ -77,7 +77,8 @@ function swap {
   source_file=$HOME/Dropbox/.swap
   case $1 in
     "status")
-      echo "${txtcyn}There are $(wc -l ~/Dropbox/.swap | cut -d "/" -f1 | tr -d ' ') rows in the swapfile.${txtrst}"
+      word_count="$(wc -l ~/Dropbox/.swap | cut -d "/" -f1 | tr -d ' ')"
+      echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the swapfile.${txtrst}"
       ;;
     "kill")
       rm $source_file && echo "" >> $source_file
