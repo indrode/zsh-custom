@@ -22,12 +22,6 @@ txtcyn=$(tput setaf 6)    # cyan
 txtwht=$(tput setaf 7)    # white
 txtrst=$(tput sgr0)       # text reset
 
-# load aliases, shortcuts
-. ~/.oh-my-zsh/custom/aliases/general.zsh
-. ~/.oh-my-zsh/custom/aliases/git.zsh
-. ~/.oh-my-zsh/custom/aliases/functions.zsh
-. ~/.oh-my-zsh/custom/shortcuts.zsh
-
 # aliases to edit zsh config
 alias zshconfig="subl ~/.zshrc"
 alias ohmyzsh="subl $ZSH"
@@ -58,6 +52,12 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
         alias $COMMAND="nocorrect $COMMAND"
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
+
+# load aliases, shortcuts
+. ~/.oh-my-zsh/custom/aliases/general.zsh
+. ~/.oh-my-zsh/custom/aliases/git.zsh
+. ~/.oh-my-zsh/custom/aliases/functions.zsh
+. ~/.oh-my-zsh/custom/shortcuts.zsh
 
 # startup items:
 # 1. ascii art zsh info
