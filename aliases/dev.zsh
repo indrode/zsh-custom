@@ -1,3 +1,8 @@
+function migrate {
+  be rake db:migrate
+  be rake db:test:prepare
+}
+
 # all-in-one simfy launch
 function simfy {
   case $1 in
