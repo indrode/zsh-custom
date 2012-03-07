@@ -57,6 +57,7 @@ fi
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
 . ~/.oh-my-zsh/custom/aliases/functions.zsh
+. ~/.oh-my-zsh/custom/aliases/dev.zsh
 . ~/.oh-my-zsh/custom/shortcuts.zsh
 
 # startup items:
