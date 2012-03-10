@@ -1,3 +1,7 @@
+# -----------------------------------
+# - functions to assist development -
+# -----------------------------------
+
 function migrate {
   be rake db:migrate
   be rake db:test:prepare
