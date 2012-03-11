@@ -39,6 +39,7 @@ plugins=(git brew bundler osx gem)
 source $ZSH/oh-my-zsh.sh
 
 # customize to your needs...
+export CC=/usr/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
