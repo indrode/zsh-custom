@@ -20,7 +20,7 @@
 local returned_error="%(?..%{$fg[red]%}⚡ %{$reset_color%})"
 
 function battery_charge {
-  python ~/Projects/code/python/batcharge.py
+  #python ~/Projects/code/python/batcharge.py
 }
 
 function horizontal_line {
