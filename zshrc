@@ -9,6 +9,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSHCUSTOM=$HOME/.oh-my-zsh/custom
 ZSH_THEME="indro"
 MAILNAME="indro.de"
+export EDITOR=mate
 
 # simpler bash text colors and attributes
 txtund=$(tput sgr 0 1)    # underline
