@@ -92,11 +92,11 @@ function swap {
       ;;
     "get")
       cat $source_file
-      echo "${ok_notice}"
+      echo "${ok_notice} (end of file)"
       ;;
     "edit")
       $EDITOR $source_file
-      echo "${ok_notice}"
+      echo "${ok_notice} (swap file opened using '$EDITOR')"
       ;;
     "help")
       echo "commands: get, set, kill, status, edit, help"
