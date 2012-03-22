@@ -52,7 +52,7 @@ function todo {
       ;;
     "edit")
       # ask for global or local todo source to edit
-      echo -n "Enter scope of todo file to edit: (global/local)"
+      echo -n "Enter scope of todo file to edit (global/local): "
       read scope
       
       if [ "$scope" = "global" ]
