@@ -50,6 +50,21 @@ function todo {
       echo "${txtgrn}${txtbld}<<LOCAL SCOPE>>${txtrst}"
       todos_file=$HOME/.todos
       ;;
+    "edit")
+      # ask for global or local todo source to edit
+      echo -n "Enter scope of todo file to edit: (global/local)"
+      read scope
+      
+      if [ "$scope" = "global" ]
+      then
+        $EDITOR $HOME/Dropbox/.todos
+      else
+        $EDITOR $HOME/.todos
+      fi
+      
+      echo "${ok_notice} ($scope todo source file opened using '$EDITOR')"
+      happy_exit
+      ;;
     *)
       echo "no scope specified!"
       angry_exit
