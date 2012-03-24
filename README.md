@@ -23,3 +23,7 @@ To get the `gmail` command work without having to enter your password manually e
 My personal zsh theme `indro` is kept in it's usual place in `~/.oh-my-zsh/themes` and is currently not checked into revision control.
 
 If `ZSH` and `oh-my-zsh` are new to you, check out Ryan Bates' [Oh My ZSH screencast](http://railscasts.com/episodes/308-oh-my-zsh) for a short introduction and setup instructions.
+
+## Updates
+
+I have moved my custom prompt into this repository. You can view it [here](https://github.com/indrode/zsh-custom/blob/master/indro.zsh-theme).
