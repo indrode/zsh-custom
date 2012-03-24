@@ -18,7 +18,7 @@ My setup includes some gimmicks that require `figlet` which can be installed via
 
 ## Notes
 
-To get the `gmail` command work without having to enter your password manually each time, create a file called `.gmail` in the `/custom` folder that includes your Gmail password (and nothing else). Now, when running `gmail`, the password is copied into the clipboard first.
+To get the `gmail` command work without having to enter your password manually each time, create a hidden file (e.g. `.personal`) in the `/custom` folder that includes your Gmail password (and nothing else). Now, you can run `gmail personal`. This allows you to create unlimited Gmail accounts.
 
 My personal zsh theme `indro` is kept in it's usual place in `~/.oh-my-zsh/themes` and is currently not checked into revision control.
 
