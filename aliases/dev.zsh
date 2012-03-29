@@ -105,3 +105,7 @@ function build {
       ;;
   esac
 }
+
+# some aliases
+alias s7="ssh s7"
+alias staging="ssh staging"
