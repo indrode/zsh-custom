@@ -32,7 +32,7 @@ function available_disk_space {
 }
 
 PROMPT='
-%{$fg[white]%}$(horizontal_line)
+%{$FG[240]%}$(horizontal_line)
 %{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
 
 RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %! %{$fg[magenta]%}$(available_disk_space)%{$reset_color%}'
