@@ -15,8 +15,6 @@
 #  username  |       path       |                     battery charge   |   history  |
 #          host            error marker                              time     available space
 
-# eventually todo: new command in next line?
-
 local returned_error="%(?..%{$fg[red]%}⚡ %{$reset_color%})"
 
 function battery_charge {
