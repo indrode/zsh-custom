@@ -107,5 +107,8 @@ function build {
 }
 
 # some aliases
-alias s7="ssh s7"
 alias staging="ssh staging"
+for i in {7..13}
+do
+   alias "s$i"="ssh s$i"
+done
