@@ -33,8 +33,8 @@ COMPLETION_WAITING_DOTS="true"
 # which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # see: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git brew bundler osx gem)
+# example format: plugins=(rails git textmate ruby lighthouse bundler)
+plugins=(git brew osx gem)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
