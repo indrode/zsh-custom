@@ -59,8 +59,6 @@ function repeat() {
   done
 }
 
-
-
 function build {
   export RUBY_HEAP_MIN_SLOTS=500000
   export RUBY_HEAP_SLOTS_INCREMENT=500000

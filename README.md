@@ -15,6 +15,10 @@ To keep all customized files within the repository, my `~/.zshrc` file looks lik
 My setup includes some gimmicks that require `figlet` which can be installed via `Fink`, a package manager for OS X. To install Fink, follow the [Fink instructions](http://www.finkproject.org/download/srcdist.php). Once Fink is installed and package description files and patches are installed, install `figlet`.
 
 	fink install figlet
+	
+## Configuration File
+
+Add a `.config` file to the root of the repository, which will be gitignored and holds a few box-specific settings. As of now, it includes the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to display the free space in the custom terminal prompt.
 
 ## Notes
 
