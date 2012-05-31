@@ -16,9 +16,9 @@ My setup includes some gimmicks that require `figlet` which can be installed via
 
 	fink install figlet
 	
-## Configuration File
+## Available disk space
 
-Add a `.config` file to the root of the repository, which will be gitignored and holds a few box-specific settings. As of now, it includes the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to display the free space in the custom terminal prompt.
+Add a `.hd` file to the root of the repository, which will be gitignored and holds the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
 
 ## Notes
 
