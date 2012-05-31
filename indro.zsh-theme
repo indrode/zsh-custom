@@ -28,9 +28,7 @@ function horizontal_line {
 }
 
 function available_disk_space {
-  df -H | grep disk1 | tr -s ' ' '.' | cut -d '.' -f4
-  # df -H | grep disk0s2 | tr -s ' ' '.' | cut -d '.' -f4
-  # TODO: use config file to determine hard drive name
+  df -H | grep $(cat ~/.oh-my-zsh/custom/.config) | tr -s ' ' '.' | cut -d '.' -f4
 }
 
 PROMPT='
