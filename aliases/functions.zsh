@@ -124,6 +124,31 @@ function swap {
   esac
 }
 
+# broadcast
+# sends a message to another box (one-way transmission)
+# run:
+#   broadcast <command> <box-name>
+# e.g.:
+#   (1) broadcast setup unagi
+#   (2) broadcast send sashimi
+#   (3) broadcast receive (optional: box-name)
+# where <box-name> is the unique identifier of the remote box as set up in the remote .box-name
+#
+# (1) this command sets up the required files (~/.boxname and ~/Dropbox/.unagi-box)
+#             -> ~/.boxname includes the name of the local box => unagi
+#             -> ~/Dropbox/.unagi-box will hold the broadcast messages
+# (2) this command sends a message to the remote box via Dropbox
+#             -> stores a message in ~/Dropbox/.sashimi-box if that file exists
+# (3) this command displays any received messages for the current box (or an optionally passed box name)
+#             -> displays message of your local box (e.g. ~/Dropbox/.unagi-box)
+#             -> if other box name specified, it acts accordingly
+#
+# messages are tagged with a timestamp (date +"%m-%d-%Y %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
+# commands: send, receive, setup, help
+function broadcast {
+  # WIP
+}
+
 # check or go to a drive volume
 function drive {
   if [ -z "$1" ]; then
