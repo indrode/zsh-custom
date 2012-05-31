@@ -70,12 +70,12 @@ fi
 # 5. todo list items
 
 # display ascii art
-echo "${txtgrn}"
-echo "_  )   \_ |_  )"
-echo "  /  (  | |  / "
-echo "___|\__/ _|___| <zsh>"
-echo "\nhttp://zsh.sourceforge.net/FAQ/"
-echo "${txtrst}"
+# echo "${txtgrn}"
+# echo "_  )   \_ |_  )"
+# echo "  /  (  | |  / "
+# echo "___|\__/ _|___| <zsh>"
+# echo "\nhttp://zsh.sourceforge.net/FAQ/"
+# echo "${txtrst}"
 
 # display info of locally mounted drives
 df -hl
