@@ -86,7 +86,9 @@ function todo {
 
 # swap-
 # stores small snippets, urls, etc. in cloud
-# options: 
+# run:
+#   swap set
+#   swap get
 function swap {
   ok_notice="${txtylw}--> OK${txtrst}"
   source_file=$HOME/Dropbox/.swap
@@ -102,7 +104,9 @@ function swap {
     "set")
       echo "${txtcyn}Add to swapfile:${txtrst}"
       read todo
-      echo "$todo" >> $source_file
+      # add date tag: date +"%m-%d-%Y %H:%M"
+      # add tag support
+      echo "[tag][date]$todo" >> $source_file
       echo "${ok_notice} (swap written)"
       ;;
     "get")
