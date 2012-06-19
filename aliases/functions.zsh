@@ -154,18 +154,18 @@ function broadcast {
 }
 
 # check or go to a drive volume
-function drive {
-  if [ -z "$1" ]; then
-    ( cd /Volumes && ls )
-  else
-    cd /Volumes/$1
-    # requires figlet (fink install figlet)
-    echo "${txtylw}"
-    figlet $1
-    echo "${txtrst}"
-    df -h |grep -i $1
-  fi
-}
+# function drive {
+#   if [ -z "$1" ]; then
+#     ( cd /Volumes && ls )
+#   else
+#     cd /Volumes/$1
+#     # requires figlet (fink install figlet)
+#     echo "${txtylw}"
+#     figlet $1
+#     echo "${txtrst}"
+#     df -h |grep -i $1
+#   fi
+# }
 
 # check number of unread emails
 function gmail {
