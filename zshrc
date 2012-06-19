@@ -102,4 +102,4 @@ fi
 
 # fink
 # http://www.finkproject.org/download/srcdist.php
-source /sw/bin/init.sh
+# source /sw/bin/init.sh
