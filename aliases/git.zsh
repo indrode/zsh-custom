@@ -11,6 +11,7 @@ alias ga='git add'
 alias gd='git diff'
 alias gcommit='git commit -v'
 alias gl='git log'
+alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log -1 --stat'
 alias gb='git branch'
 alias gss='git stash'
