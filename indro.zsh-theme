@@ -28,7 +28,7 @@ function horizontal_line {
 }
 
 function available_disk_space {
-  df -H | grep $(cat ~/.oh-my-zsh/custom/.hd) | tr -s ' ' '.' | cut -d '.' -f4
+  df -H | grep $(cat ~/.oh-my-zsh/custom/.hd) | tr -s ' ' '=' | cut -d '=' -f4
 }
 
 PROMPT='

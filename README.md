@@ -5,7 +5,7 @@ This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup
 
 ## Setting up .zshrc
 
-In the `.oh-my-zsh` directory, replace `custom` with the a clone of this repository.
+In your `~/.oh-my-zsh` directory, replace `custom` with the a clone of this repository.
 
 	rm custom
 	git clone git@github.com:indrode/zsh-custom.git custom
