@@ -62,6 +62,9 @@ fi
 . ~/.oh-my-zsh/custom/aliases/dev.zsh
 . ~/.oh-my-zsh/custom/shortcuts.zsh
 
+# load settings
+. ~/.oh-my-zsh/custom/.settings
+
 # startup items:
 # 1. ascii art zsh info
 # 2. last login info
@@ -85,8 +88,10 @@ echo
 swap status
 
 # display number of unread emails
-echo "\n${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
-echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
+if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
+  echo "\n${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
+  echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
+fi
 
 # global todos (stored in the cloud)
 if [ -f "$HOME/Dropbox/.todos" ]; then
