@@ -20,6 +20,8 @@ You can enable certain features, by placing certain `.setting` files in your `cu
 	ENABLE_SWAP.setting
 	CHECK_MAIL.setting
 
+Set up an intro message or ascii art similar if you wish and call it `.settings/INTRO.setting`. This file will be displayed when starting a new session.
+
 ## Dependencies
 
 My setup includes some gimmicks that require `figlet` which can be installed via `Fink`, a package manager for OS X. To install Fink, follow the [Fink instructions](http://www.finkproject.org/download/srcdist.php). Once Fink is installed and package description files and patches are installed, install `figlet`.

@@ -81,9 +81,11 @@ fi
 # echo "${txtrst}"
 
 # display info of locally mounted drives
-df -hl
+#df -hl
 
-echo
+if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
+  cat $ZSH/custom/.settings/INTRO.setting
+fi
 
 # display swapfile status
 if [ -f "$ZSH/custom/.settings/ENABLE_SWAP.setting" ]; then
