@@ -83,9 +83,12 @@ fi
 # display info of locally mounted drives
 df -hl
 
-# display swapfile status
 echo
-swap status
+
+# display swapfile status
+if [ -f "$ZSH/custom/.settings/ENABLE_SWAP.setting" ]; then
+  swap status
+fi
 
 # display number of unread emails
 if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
