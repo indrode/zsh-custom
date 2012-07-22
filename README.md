@@ -6,8 +6,9 @@ This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup
 ## Setting up .zshrc
 
 In the `.oh-my-zsh` directory, replace `custom` with the a clone of this repository.
-  rm custom
-  git clone git@github.com:indrode/zsh-custom.git custom
+
+	rm custom
+	git clone git@github.com:indrode/zsh-custom.git custom
 
 To keep all customized files within the repository, my `~/.zshrc` file looks like this:
 
@@ -16,8 +17,8 @@ To keep all customized files within the repository, my `~/.zshrc` file looks lik
 
 You can enable certain features, by placing certain `.setting` files in your `custom/.settings` directory, e.g.
 
-  ENABLE_SWAP.setting
-  CHECK_MAIL.setting
+	ENABLE_SWAP.setting
+	CHECK_MAIL.setting
 
 ## Dependencies
 
