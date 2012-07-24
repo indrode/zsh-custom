@@ -1,0 +1,11 @@
+{
+	// "color_scheme": "Packages/Color Scheme - Default/Railscasts.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Tomorrow.tmTheme",
+	"theme": "Soda Light.sublime-theme",
+	"soda_classic_tabs": false,
+	"font_size": 13.0,
+	"tab_size": 2,
+	"word_wrap": true,
+  "show_full_path": true
+}
+
