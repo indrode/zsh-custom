@@ -6,6 +6,7 @@
 	"font_size": 13.0,
 	"tab_size": 2,
 	"word_wrap": true,
-  "show_full_path": true
+	"trim_trailing_white_space_on_save": true,
+  	"show_full_path": true
 }
 
