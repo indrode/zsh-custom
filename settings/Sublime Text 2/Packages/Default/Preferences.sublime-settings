@@ -28,7 +28,7 @@
     "gutter": true,
 
     // Spacing between the gutter and the text
-    "margin": 4,
+    "margin": 0,
 
     // Fold buttons are the triangles shown in the gutter to fold regions of text
     "fold_buttons": true,
@@ -53,7 +53,7 @@
     "use_tab_stops": true,
 
     // Set to false to disable detection of tabs vs. spaces on load
-    "detect_indentation": false,
+    "detect_indentation": true,
 
     // Calculates indentation automatically when pressing enter
     "auto_indent": true,
@@ -73,7 +73,7 @@
     // Disables horizontal scrolling if enabled.
     // May be set to true, false, or "auto", where it will be disabled for
     // source code, and otherwise enabled.
-    "word_wrap": "true",
+    "word_wrap": true,
 
     // Set to a value other than 0 to force wrapping at that column rather than the
     // window width
@@ -98,10 +98,10 @@
     "draw_minimap_border": false,
 
     // If enabled, will highlight any line with a caret
-    "highlight_line": false,
+    "highlight_line": true,
 
     // Valid values are "smooth", "phase", "blink", "wide" and "solid".
-    "caret_style": "smooth",
+    "caret_style": "phase",
 
     // Set to false to disable underlining the brackets surrounding the caret
     "match_brackets": true,
@@ -147,7 +147,7 @@
 
     // Set to "none" to turn off drawing white space, "selection" to draw only the
     // white space within the selection, and "all" to draw all white space
-    "draw_white_space": "selection",
+    "draw_white_space": "all",
 
     // Set to false to turn off the indentation guides.
     // The color and width of the indent guides may be customized by editing
@@ -243,8 +243,7 @@
     //
 
     // The theme controls the look of Sublime Text's UI (buttons, tabs, scroll bars, etc)
-    // "theme": "Default.sublime-theme",
-    "theme": "Soda Dark.sublime-theme",
+    "theme": "Default.sublime-theme",
 
     // Set to 0 to disable smooth scrolling. Set to a value between 0 and 1 to
     // scroll slower, or set to larger than 1 to scroll faster
@@ -254,12 +253,12 @@
     "tree_animation_enabled": true,
 
     // Makes tabs with modified files more visible
-    "highlight_modified_tabs": false,
+    "highlight_modified_tabs": true,
 
     "show_tab_close_buttons": true,
 
     // Show folders in the side bar in bold
-    "bold_folder_labels": false,
+    "bold_folder_labels": true,
 
     // OS X 10.7 only: Set to true to disable Lion style full screen support.
     // Sublime Text must be restarted for this to take effect.
@@ -324,3 +323,4 @@
     // a restart may be required if the package contains plugins.
     "ignored_packages": ["Vintage"]
 }
+
