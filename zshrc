@@ -65,26 +65,13 @@ fi
 # load settings
 . ~/.oh-my-zsh/custom/.settings
 
-# startup items:
-# 1. ascii art zsh info
-# 2. last login info
-# 3. mounted drives status
-# 4. unread emails count
-# 5. todo list items
-
-# display ascii art
-# echo "${txtgrn}"
-# echo "_  )   \_ |_  )"
-# echo "  /  (  | |  / "
-# echo "___|\__/ _|___| <zsh>"
-# echo "\nhttp://zsh.sourceforge.net/FAQ/"
-# echo "${txtrst}"
-
 # display info of locally mounted drives
 #df -hl
 
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
+  echo "\n${txtylw}"
   cat $ZSH/custom/.settings/INTRO.setting
+  echo "${txtrst}"
 fi
 
 # display swapfile status
@@ -94,7 +81,7 @@ fi
 
 # display number of unread emails
 if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-  echo "\n${txtylw}You have $(gmail gmail) unread personal emails.${txtrst}"
+  echo "\n${txtblu}You have $(gmail gmail) unread personal emails.${txtrst}"
   echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 fi
 
