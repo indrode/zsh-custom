@@ -1,7 +1,7 @@
 # zsh-custom
 I am a fan of [ZSH](http://www.zsh.org/) and I use the configuration framework [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh) to customize it to my needs.
 
-This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup which works fine for me. It includes some personal configurations, so it is not made to be a template, but it may provide some re-usable ideas.
+This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup which works fine for me. It includes some personal configurations, so it is not made to be a template, but it may provide some re-usable ideas. However, I'm working on making this more generic by adding personal settings and configuration files.
 
 ## Setting up .zshrc
 
