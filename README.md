@@ -22,12 +22,6 @@ You can enable certain features, by placing certain `.setting` files in your `cu
 
 Set up an intro message or ascii art similar if you wish and call it `.settings/INTRO.setting`. This file will be displayed when starting a new session.
 
-## Dependencies
-
-My setup includes some gimmicks that require `figlet` which can be installed via `Fink`, a package manager for OS X. To install Fink, follow the [Fink instructions](http://www.finkproject.org/download/srcdist.php). Once Fink is installed and package description files and patches are installed, install `figlet`.
-
-	fink install figlet
-	
 ## Available disk space
 
 Add a `.hd` file to the root of the repository, which will be gitignored and holds the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
