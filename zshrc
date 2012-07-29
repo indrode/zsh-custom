@@ -72,9 +72,6 @@ eval "$(rbenv init -)"
 # load settings
 . ~/.oh-my-zsh/custom/.settings
 
-# display info of locally mounted drives
-#df -hl
-
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
   echo "\n${txtylw}"
   cat $ZSH/custom/.settings/INTRO.setting
