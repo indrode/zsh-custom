@@ -54,14 +54,14 @@ function todo {
       # ask for global or local todo source to edit
       echo -n "Enter scope of todo file to edit (global/local): "
       read scope
-      
+
       if [ "$scope" = "global" ]
       then
         $EDITOR $HOME/Dropbox/.todos
       else
         $EDITOR $HOME/.todos
       fi
-      
+
       echo "${ok_notice} ($scope todo source file opened using '$EDITOR')"
       happy_exit
       ;;
@@ -70,7 +70,7 @@ function todo {
       angry_exit
       ;;
   esac
-  
+
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ true ]; do
     read todo
@@ -152,20 +152,6 @@ function swap {
 function broadcast {
   # WIP
 }
-
-# check or go to a drive volume
-# function drive {
-#   if [ -z "$1" ]; then
-#     ( cd /Volumes && ls )
-#   else
-#     cd /Volumes/$1
-#     # requires figlet (fink install figlet)
-#     echo "${txtylw}"
-#     figlet $1
-#     echo "${txtrst}"
-#     df -h |grep -i $1
-#   fi
-# }
 
 # check number of unread emails
 function gmail {
