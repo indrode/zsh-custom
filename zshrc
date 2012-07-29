@@ -18,14 +18,6 @@ else
   echo "  setup_zsh"
 fi
 
-# if [ $CONFIG_FILE does not exist ];
-# then
-#   echo "File $FILE does not exist. Please add this file before by running "
-# else
-#   source $ZSH/custom/.settings/CONFIG.setting
-# fi
-
-
 # simpler bash text colors and attributes
 txtund=$(tput sgr 0 1)    # underline
 txtbld=$(tput bold)       # bold
