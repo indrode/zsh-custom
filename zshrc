@@ -40,11 +40,15 @@ plugins=(git brew osx gem)
 source $ZSH/oh-my-zsh.sh
 
 # customize to your needs...
-export CC=/usr/bin/gcc-4.2
+export CC=/usr/local/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
-export PATH=/usr/local/bin:$HOME/.rvm/gems/ree-1.8.7-2010.02/bin:$HOME/.rvm/gems/ruby-1.9.3-p0/bin:$HOME/.rvm/gems/ruby-1.9.3-p0@global/bin:$HOME/.rvm/rubies/ruby-1.9.3-p0/bin:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+
+# RVM only:
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 export SOLR_BIN=/usr/local/Cellar/solr/3.5.0/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -54,6 +58,9 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
         alias $COMMAND="nocorrect $COMMAND"
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
+
+# rbenv
+eval "$(rbenv init -)"
 
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh

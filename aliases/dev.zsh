@@ -30,7 +30,10 @@ function init {
   case $1 in
     "simfy")
       solr-server
-      rvm use ree
+
+      # RVM only
+      # rvm use ree
+
       be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
       be ruby script/services start_redis ./tmp/redis/redis_development
       be ruby script/services start_redis ./tmp/redis/redis_test
@@ -70,9 +73,9 @@ function build {
   export CHECK_DATABASE=true
   # export RSPEC_ORDER="--order rand"
   # export RSPEC_ORDER="--order rand:60271"
-  
+
   mkdir -p tmp
-  
+
   case $1 in
     "cucumber")
       bundle exec cucumber -p default features/plain
