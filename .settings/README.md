@@ -2,9 +2,9 @@
 
 Add your settings (*.setting) files here (in `.settings/`)to customize your personal ZSH configuration. The following settings are supported:
 
-  CHECK_MAIL.setting
-  .*.email.setting
-  INTRO.setting
+    CHECK_MAIL.setting
+    .*.email.setting
+    INTRO.setting
 
 ## CHECK_MAIL
 
@@ -12,7 +12,7 @@ To get the `gmail` command work without having to enter your password manually e
 
 This option is only available if the `CHECK_MAIL.setting` exists in this folder.
 
-  touch .settings/CHECK_MAIL.setting
+    touch .settings/CHECK_MAIL.setting
 
 ## INTRO
 
