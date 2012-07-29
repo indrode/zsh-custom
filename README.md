@@ -15,12 +15,10 @@ To keep all customized files within the repository, my `~/.zshrc` file looks lik
 	# HINT: type 'ohmyzsh' to edit shell config files
 	. ~/.oh-my-zsh/custom/zshrc
 
-You can enable certain features, by placing certain `.setting` files in your `custom/.settings` directory, e.g.
+Restart the shell and run `setup_zsh` to create the configuration file.
 
-	ENABLE_SWAP.setting
-	CHECK_MAIL.setting
-
-Set up an intro message or ascii art similar if you wish and call it `.settings/INTRO.setting`. This file will be displayed when starting a new session.
+	exec $SHELL
+	setup_zsh
 
 ## Available disk space
 
@@ -30,7 +28,7 @@ Add a `.hd` file to the root of the repository, which will be gitignored and hol
 
 The default settings for Sublime Text 2 in `/settings` need to be moved to Sublime Text's `/Packages/Default` folder:
 
-    ~/Library/Application Support/Sublime Text 2/Packages/Default
+	~/Library/Application Support/Sublime Text 2/Packages/Default
 
 Read more about setting up Gmail-account checking in the `.settings` section: [https://github.com/indrode/zsh-custom/tree/master/.settings](https://github.com/indrode/zsh-custom/tree/master/.settings).
 

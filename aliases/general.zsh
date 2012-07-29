@@ -2,6 +2,8 @@
 # - general aliases -
 # -------------------
 
+#setup zp-zsh
+alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'

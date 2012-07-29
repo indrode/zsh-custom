@@ -1,6 +1,6 @@
 # User-specific settings
 
-Add your settings (*.setting) files here (in `.settings/`)to customize your personal ZSH configuration. The following settings are supported:
+Add your settings (*.setting) files here (in `.settings/`)to customize your personal ZSH configuration. For example, The following settings are supported:
 
     CHECK_MAIL.setting
     .*.email.setting

@@ -7,9 +7,24 @@
 # global variables
 export ZSH=$HOME/.oh-my-zsh
 export ZSHCUSTOM=$HOME/.oh-my-zsh/custom
-export ZSH_THEME="indro"
-export MAILNAME="indro.de"
-export EDITOR=subl
+
+# personal settings
+CONFIG_FILE=$ZSH/custom/.settings/CONFIG.setting
+if [ -f $CONFIG_FILE ];
+then
+  source $CONFIG_FILE
+else
+  echo "File $CONFIG_FILE does not exist. Please create configuration files by running:"
+  echo "  setup_zsh"
+fi
+
+# if [ $CONFIG_FILE does not exist ];
+# then
+#   echo "File $FILE does not exist. Please add this file before by running "
+# else
+#   source $ZSH/custom/.settings/CONFIG.setting
+# fi
+
 
 # simpler bash text colors and attributes
 txtund=$(tput sgr 0 1)    # underline
