@@ -101,6 +101,3 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
-# fink
-# http://www.finkproject.org/download/srcdist.php
-# source /sw/bin/init.sh
