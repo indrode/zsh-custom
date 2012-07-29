@@ -5,10 +5,10 @@
 # pr0xy settings (indrode.com)
 
 # global variables
-ZSH=$HOME/.oh-my-zsh
-ZSHCUSTOM=$HOME/.oh-my-zsh/custom
-ZSH_THEME="indro"
-MAILNAME="indro.de"
+export ZSH=$HOME/.oh-my-zsh
+export ZSHCUSTOM=$HOME/.oh-my-zsh/custom
+export ZSH_THEME="indro"
+export MAILNAME="indro.de"
 export EDITOR=subl
 
 # simpler bash text colors and attributes
