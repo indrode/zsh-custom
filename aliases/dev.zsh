@@ -34,7 +34,6 @@ function init {
       # RVM only
       # rvm use ree
 
-      be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
       be ruby script/services start_redis ./tmp/redis/redis_development
       be ruby script/services start_redis ./tmp/redis/redis_test
       curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
