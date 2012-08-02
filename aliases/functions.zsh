@@ -84,7 +84,7 @@ function todo {
   done
 }
 
-# stash-
+# stash
 # stores small snippets, urls, etc. in cloud
 # run:
 #   stash set
@@ -126,6 +126,19 @@ function stash {
       angry_exit
       ;;
   esac
+}
+
+# swap
+# quick file transfer to specified host
+# target host name is specified in .settings/CONFIG.setting
+# requires a private/public key ssh authentication setup to target host
+# run:
+#   swap <filename>
+# e.g.:
+#   (1) swap myfile.txt
+function swap {
+  scp $1 $TARGET_HOST:~/$2
+  echo "moved to $TARGET_HOST:~/$2"
 }
 
 # broadcast
