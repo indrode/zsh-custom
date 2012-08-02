@@ -84,30 +84,30 @@ function todo {
   done
 }
 
-# swap-
+# stash-
 # stores small snippets, urls, etc. in cloud
 # run:
-#   swap set
-#   swap get
-function swap {
+#   stash set
+#   stash get
+function stash {
   ok_notice="${txtylw}--> OK${txtrst}"
-  source_file=$HOME/Dropbox/.swap
+  source_file=$HOME/Dropbox/.stash
   case $1 in
     "status")
-      word_count="$(wc -l ~/Dropbox/.swap | cut -d "/" -f1 | tr -d ' ')"
-      echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the swapfile.${txtrst}"
+      word_count="$(wc -l ~/Dropbox/.stash | cut -d "/" -f1 | tr -d ' ')"
+      echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the stashfile.${txtrst}"
       ;;
     "kill")
       rm $source_file && echo "" >> $source_file
-      echo "${ok_notice} (swap erased)"
+      echo "${ok_notice} (stash erased)"
       ;;
     "set")
-      echo "${txtcyn}Add to swapfile:${txtrst}"
+      echo "${txtcyn}Add to stashfile:${txtrst}"
       read todo
       # add date tag: date +"%m-%d-%Y %H:%M"
       # add tag support
       echo "[tag][date]$todo" >> $source_file
-      echo "${ok_notice} (swap written)"
+      echo "${ok_notice} (stash written)"
       ;;
     "get")
       cat $source_file
@@ -115,14 +115,14 @@ function swap {
       ;;
     "edit")
       $EDITOR $source_file
-      echo "${ok_notice} (swap file opened using '$EDITOR')"
+      echo "${ok_notice} (stash file opened using '$EDITOR')"
       ;;
     "help")
       echo "commands: get, set, kill, status, edit, help"
-      echo "e.g. swap get"
+      echo "e.g. stash get"
       ;;
     *)
-      echo "swap what? (type 'swap help' for instructions)"
+      echo "stash what? (type 'stash help' for instructions)"
       angry_exit
       ;;
   esac
