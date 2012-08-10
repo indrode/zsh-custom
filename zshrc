@@ -5,11 +5,18 @@
 # pr0xy settings (indrode.com)
 
 # global variables
-ZSH=$HOME/.oh-my-zsh
-ZSHCUSTOM=$HOME/.oh-my-zsh/custom
-ZSH_THEME="indro"
-MAILNAME="indro.de"
-export EDITOR=subl
+export ZSH=$HOME/.oh-my-zsh
+export ZSHCUSTOM=$HOME/.oh-my-zsh/custom
+
+# personal settings
+CONFIG_FILE=$ZSH/custom/.settings/CONFIG.setting
+if [ -f $CONFIG_FILE ];
+then
+  source $CONFIG_FILE
+else
+  echo "File $CONFIG_FILE does not exist. Please create configuration files by running:"
+  echo "  setup_zsh"
+fi
 
 # simpler bash text colors and attributes
 txtund=$(tput sgr 0 1)    # underline
@@ -40,11 +47,15 @@ plugins=(git brew osx gem)
 source $ZSH/oh-my-zsh.sh
 
 # customize to your needs...
-export CC=/usr/bin/gcc-4.2
+export CC=/usr/local/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
-export PATH=/usr/local/bin:$HOME/.rvm/gems/ree-1.8.7-2010.02/bin:$HOME/.rvm/gems/ruby-1.9.3-p0/bin:$HOME/.rvm/gems/ruby-1.9.3-p0@global/bin:$HOME/.rvm/rubies/ruby-1.9.3-p0/bin:$HOME/.rvm/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+
+# RVM only:
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH="$HOME/.rbenv/bin:$PATH"
 export SOLR_BIN=/usr/local/Cellar/solr/3.5.0/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -55,6 +66,9 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
 
+# rbenv
+eval "$(rbenv init -)"
+
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
@@ -64,9 +78,6 @@ fi
 
 # load settings
 . ~/.oh-my-zsh/custom/.settings
-
-# display info of locally mounted drives
-#df -hl
 
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
   echo "\n${txtylw}"
@@ -97,6 +108,3 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
-# fink
-# http://www.finkproject.org/download/srcdist.php
-# source /sw/bin/init.sh
