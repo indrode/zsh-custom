@@ -137,8 +137,8 @@ function stash {
 # e.g.:
 #   (1) swap myfile.txt
 function swap {
-  scp $1 $TARGET_HOST:~/$2
-  echo "moved to $TARGET_HOST:~/$2"
+  scp $1 $TARGET_HOST:~/Incoming/$2
+  echo "moved to $TARGET_HOST:~/Incoming/$2"
 }
 
 # broadcast
