@@ -6,3 +6,6 @@ export MAILNAME="indro.de"
 
 # your preferred text editor, e.g. mate, subl, vim, nano
 export EDITOR=subl
+
+# swap outgoing folder
+export OUTGOING="$HOME/Outgoing"
