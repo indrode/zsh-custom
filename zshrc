@@ -40,6 +40,8 @@ plugins=(git brew osx gem)
 source $ZSH/oh-my-zsh.sh
 
 # customize to your needs...
+export HISTSIZE=100000
+export SAVEHIST=100000
 export CC=/usr/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
