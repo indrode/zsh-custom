@@ -2,6 +2,12 @@
 # - functions to assist development -
 # -----------------------------------
 
+function chpwd() {
+  case $PWD in
+    ~/Projects/simfy) echo "Welcome!";;
+  esac
+}
+
 function migrate {
   be rake db:migrate
   be rake db:test:prepare
