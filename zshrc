@@ -56,7 +56,7 @@ export RUBYOPT="rubygems"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export PATH="$HOME/.rbenv/bin:$PATH"
-export SOLR_BIN=/usr/local/Cellar/solr/3.5.0/libexec/example
+export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
