@@ -4,6 +4,7 @@
 
 #setup zp-zsh
 alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
+
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'
@@ -43,6 +44,7 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 
 #tools
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
+alias init_transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
