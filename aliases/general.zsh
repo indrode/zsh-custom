@@ -2,6 +2,9 @@
 # - general aliases -
 # -------------------
 
+#setup zp-zsh
+alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
+
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'
@@ -16,6 +19,7 @@ alias aliases-reload="source $ZSHCUSTOM/aliases/general.zsh"
 
 #bundler
 alias be='bundle exec'
+alias tbe='time bundle exec'
 
 #maintenance
 alias check_space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
@@ -40,17 +44,19 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 
 #tools
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
+alias init_transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
+# RVM only:
 #rmv
-alias rvm-set='rvm --default use'
-alias rvm-restart='rvm_reload_flag=1 source '\''$HOME/.rvm/scripts/rvm'\'''
+# alias rvm-set='rvm --default use'
+# alias rvm-restart='rvm_reload_flag=1 source '\''$HOME/.rvm/scripts/rvm'\'''
 
 #redis
-alias redis='/usr/local/bin/redis-server'
+# alias redis='/usr/local/bin/redis-server'
 alias redis-start='launchctl start io.redis.redis-server'
 alias redis-stop='launchctl stop io.redis.redis-server'
 
@@ -69,3 +75,4 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias quiet="osascript -e 'set volume 0.5'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+

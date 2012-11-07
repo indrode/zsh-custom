@@ -35,13 +35,12 @@ function simfy {
 function init {
   case $1 in
     "simfy")
-      solr-server
-      rvm use ree
-      be /usr/local/bin/redis-server /usr/local/etc/redis-simfy.conf
-      be ruby script/services start_redis ./tmp/redis/redis_development
-      be ruby script/services start_redis ./tmp/redis/redis_test
-      curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_test&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
-      curl -s "http://localhost:8983/solr/admin/cores?action=CREATE&name=simfy_development&instanceDir=/Users/$(whoami)/Projects/simfy/solr/core" 2>&1 >/dev/null
+      # RVM only
+      # rvm use ree
+      thor redis:start development
+      thor redis:start test
+      ruby script/solr.rb start
+      subl --project ~/Projects/sublime/simfy.sublime-project
       ;;
     "help")
       echo "Help not available yet!"
@@ -76,9 +75,9 @@ function build {
   export CHECK_DATABASE=true
   # export RSPEC_ORDER="--order rand"
   # export RSPEC_ORDER="--order rand:60271"
-  
+
   mkdir -p tmp
-  
+
   case $1 in
     "cucumber")
       bundle exec cucumber -p default features/plain

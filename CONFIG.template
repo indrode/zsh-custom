@@ -1,0 +1,11 @@
+# name of the zsh theme to be used
+export ZSH_THEME="indro"
+
+# name part of your email address, e.g. {name}@gmail.com
+export MAILNAME="indro.de"
+
+# your preferred text editor, e.g. mate, subl, vim, nano
+export EDITOR=subl
+
+# your ruby version manager, e.g. rvm, rbenv
+export RUBY_VM=rbenv

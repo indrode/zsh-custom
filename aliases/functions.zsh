@@ -54,14 +54,14 @@ function todo {
       # ask for global or local todo source to edit
       echo -n "Enter scope of todo file to edit (global/local): "
       read scope
-      
+
       if [ "$scope" = "global" ]
       then
         $EDITOR $HOME/Dropbox/.todos
       else
         $EDITOR $HOME/.todos
       fi
-      
+
       echo "${ok_notice} ($scope todo source file opened using '$EDITOR')"
       happy_exit
       ;;
@@ -70,7 +70,7 @@ function todo {
       angry_exit
       ;;
   esac
-  
+
   echo "Enter TODO tasks! ('help' for available commands)"
   while [ true ]; do
     read todo
@@ -84,30 +84,30 @@ function todo {
   done
 }
 
-# swap-
+# stash
 # stores small snippets, urls, etc. in cloud
 # run:
-#   swap set
-#   swap get
-function swap {
+#   stash set
+#   stash get
+function stash {
   ok_notice="${txtylw}--> OK${txtrst}"
-  source_file=$HOME/Dropbox/.swap
+  source_file=$HOME/Dropbox/.stash
   case $1 in
     "status")
-      word_count="$(wc -l ~/Dropbox/.swap | cut -d "/" -f1 | tr -d ' ')"
-      echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the swapfile.${txtrst}"
+      word_count="$(wc -l ~/Dropbox/.stash | cut -d "/" -f1 | tr -d ' ')"
+      echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the stashfile.${txtrst}"
       ;;
     "kill")
       rm $source_file && echo "" >> $source_file
-      echo "${ok_notice} (swap erased)"
+      echo "${ok_notice} (stash erased)"
       ;;
     "set")
-      echo "${txtcyn}Add to swapfile:${txtrst}"
+      echo "${txtcyn}Add to stashfile:${txtrst}"
       read todo
       # add date tag: date +"%m-%d-%Y %H:%M"
       # add tag support
       echo "[tag][date]$todo" >> $source_file
-      echo "${ok_notice} (swap written)"
+      echo "${ok_notice} (stash written)"
       ;;
     "get")
       cat $source_file
@@ -115,17 +115,30 @@ function swap {
       ;;
     "edit")
       $EDITOR $source_file
-      echo "${ok_notice} (swap file opened using '$EDITOR')"
+      echo "${ok_notice} (stash file opened using '$EDITOR')"
       ;;
     "help")
       echo "commands: get, set, kill, status, edit, help"
-      echo "e.g. swap get"
+      echo "e.g. stash get"
       ;;
     *)
-      echo "swap what? (type 'swap help' for instructions)"
+      echo "stash what? (type 'stash help' for instructions)"
       angry_exit
       ;;
   esac
+}
+
+# swap
+# quick file transfer to specified host
+# target host name is specified in .settings/CONFIG.setting
+# requires a private/public key ssh authentication setup to target host
+# run:
+#   swap <filename>
+# e.g.:
+#   (1) swap myfile.txt
+function swap {
+  scp $1 $TARGET_HOST:~/Incoming/$2
+  echo "moved to $TARGET_HOST:~/Incoming/$2"
 }
 
 # broadcast
@@ -153,22 +166,8 @@ function broadcast {
   # WIP
 }
 
-# check or go to a drive volume
-# function drive {
-#   if [ -z "$1" ]; then
-#     ( cd /Volumes && ls )
-#   else
-#     cd /Volumes/$1
-#     # requires figlet (fink install figlet)
-#     echo "${txtylw}"
-#     figlet $1
-#     echo "${txtrst}"
-#     df -h |grep -i $1
-#   fi
-# }
-
 # check number of unread emails
 function gmail {
-  curl -u $MAILNAME@$1.com:$(cat ~/.oh-my-zsh/custom/.$1) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
+  curl -u $MAILNAME@$1.com:$(cat ~/.oh-my-zsh/custom/.settings/.$1.email.setting) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
 }
 
