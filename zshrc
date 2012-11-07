@@ -56,10 +56,10 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 
 # RVM only:
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$HOME/.rbenv/bin:$PATH"
 export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -71,7 +71,7 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
 fi
 
 # rbenv
-eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh
