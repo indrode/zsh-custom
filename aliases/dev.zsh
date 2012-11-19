@@ -40,7 +40,6 @@ function init {
       thor redis:start development
       thor redis:start test
       ruby script/solr.rb start
-      subl --project ~/Projects/sublime/simfy.sublime-project
       ;;
     "help")
       echo "Help not available yet!"
