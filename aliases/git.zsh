@@ -39,4 +39,4 @@ alias gfix="git amend -C HEAD"
 
 # 4. github
 
-alias git_status="curl https://status.github.com/api/last-message.json"
+alias github-status="curl https://status.github.com/api/last-message.json"
