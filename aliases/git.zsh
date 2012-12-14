@@ -36,3 +36,7 @@ alias grba='git rebase --abort'
 alias grbi='git rebase --ignore'
 alias gf="git fetch"
 alias gfix="git amend -C HEAD"
+
+# 4. github
+
+alias git_status="curl https://status.github.com/api/last-message.json"
