@@ -96,7 +96,6 @@ fi
 
 # display number of unread emails
 if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-  echo "\n${txtblu}You have $(gmail gmail) unread personal emails.${txtrst}"
   echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 fi
 
