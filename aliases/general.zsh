@@ -12,9 +12,6 @@ alias P='grep --color=auto -i'
 #command upgrades
 alias cp='cp -v'
 
-#chruby
-alias r193="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-1.9.3"
-
 #alias
 alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
 alias aliases-open="subl $ZSHCUSTOM/aliases/general.zsh"
