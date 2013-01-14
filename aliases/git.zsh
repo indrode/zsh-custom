@@ -38,5 +38,5 @@ alias gf="git fetch"
 alias gfix="git amend -C HEAD"
 
 # 4. github
-
 alias github-status="curl https://status.github.com/api/last-message.json"
+alias github-fullstatus="curl https://status.github.com/api/messages.json"
