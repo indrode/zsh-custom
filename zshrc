@@ -53,11 +53,16 @@ export CC=/usr/local/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 
-# RVM only:
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
+
+# requires .rvm/rubies because of REE; should be removed once REE is not needed anymore
+#RUBIES=(
+#  ~/.rvm/rubies/*
+#  /opt/rubies/*
+#)
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-export PATH="$HOME/.rbenv/bin:$PATH"
 export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -67,9 +72,6 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
         alias $COMMAND="nocorrect $COMMAND"
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
-
-# rbenv
-eval "$(rbenv init -)"
 
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh
@@ -94,7 +96,6 @@ fi
 
 # display number of unread emails
 if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-  echo "\n${txtblu}You have $(gmail gmail) unread personal emails.${txtrst}"
   echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 fi
 
@@ -110,3 +111,5 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
+# default ruby
+chruby ruby-1.9.3

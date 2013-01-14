@@ -19,7 +19,7 @@ alias gsa='git stash apply'
 alias gsp='git stash pop'
 
 # 2. custom
-alias rev='git log -1 | grep commit | cut -c 8-'
+alias rev='git log -1 --pretty=%H'
 
 # 3. advanced (rarely used)
 alias gba='git branch -a'
