@@ -7,5 +7,5 @@ export MAILNAME="indro.de"
 # your preferred text editor, e.g. mate, subl, vim, nano
 export EDITOR=subl
 
-# your ruby version manager, e.g. rvm, rbenv
+# your ruby version manager, e.g. rvm, rbenv, chruby
 export RUBY_VM=rbenv

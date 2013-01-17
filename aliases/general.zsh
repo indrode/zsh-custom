@@ -53,13 +53,7 @@ alias init_transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
-# RVM only:
-#rmv
-# alias rvm-set='rvm --default use'
-# alias rvm-restart='rvm_reload_flag=1 source '\''$HOME/.rvm/scripts/rvm'\'''
-
 #redis
-# alias redis='/usr/local/bin/redis-server'
 alias redis-start='launchctl start io.redis.redis-server'
 alias redis-stop='launchctl stop io.redis.redis-server'
 

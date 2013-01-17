@@ -56,12 +56,6 @@ export RUBYOPT="rubygems"
 source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-# requires .rvm/rubies because of REE; should be removed once REE is not needed anymore
-#RUBIES=(
-#  ~/.rvm/rubies/*
-#  /opt/rubies/*
-#)
-
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
 
