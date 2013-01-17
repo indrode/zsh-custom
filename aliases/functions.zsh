@@ -164,6 +164,25 @@ function swap {
 # commands: send, receive, setup, help
 function broadcast {
   # WIP
+  case $1 in
+    "setup")
+      echo "Created a file called ~/.boxname that contains: $(hostname)"
+      hostname > ~/.boxname
+      ;;
+    "receive")
+      if [ "$2" = "" ]
+      then
+        $SUBJECT = "$(cat ~/.boxname)"
+      else
+        $SUBJECT = "$2"
+      fi
+      echo "receiving from $2"
+      ;;
+    "send")
+      echo "Message: "
+      read message
+      ;;
+  esac
 }
 
 # check number of unread emails
