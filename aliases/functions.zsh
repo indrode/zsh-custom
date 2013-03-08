@@ -179,7 +179,6 @@ function broadcast {
     box=$2
   fi
 
-
   case $1 in
     "setup")
       echo "Created a file called ~/.boxname that contains: $(hostname)"
@@ -195,6 +194,14 @@ function broadcast {
       read message
       output="[$(date +"%Y-%m-%d %H:%M")] [$(hostname)]"
       printf "%-35s %s\n" $output $message >> ~/Dropbox/.$box-box
+      ;;
+    "help")
+      echo "Use `broadcast setup` to set up a default box."
+      echo "Commands: setup, send, receive, clear, help"
+      ;;
+    "clear")
+      echo "Removing all messages from: $box"
+      echo "" > ~/Dropbox/.$box-box
       ;;
   esac
 }
