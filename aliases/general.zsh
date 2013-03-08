@@ -14,6 +14,7 @@ alias cp='cp -v'
 
 #chruby
 alias r193="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-1.9.3"
+alias r200="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-2.0.0"
 
 #alias
 alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
