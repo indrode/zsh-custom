@@ -160,27 +160,31 @@ function swap {
 #             -> displays message of your local box (e.g. ~/Dropbox/.unagi-box)
 #             -> if other box name specified, it acts accordingly
 #
-# messages are tagged with a timestamp (date +"%m-%d-%Y %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
+# messages are tagged with a timestamp $(date +"%Y-%m-%d %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
 # commands: send, receive, setup, help
 function broadcast {
-  # WIP
+  # WIP (basic functionality complete; add validation and fall-back locations)
   case $1 in
     "setup")
       echo "Created a file called ~/.boxname that contains: $(hostname)"
       hostname > ~/.boxname
+      touch ~/Dropbox/.$(hostname)-box
       ;;
     "receive")
       if [ "$2" = "" ]
       then
-        $SUBJECT = "$(cat ~/.boxname)"
+        box="$(cat ~/.boxname)"
       else
-        $SUBJECT = "$2"
+        box=$2
       fi
-      echo "receiving from $2"
+      echo "reading broadcast messages from: $box"
+      cat ~/Dropbox/.$box-box
       ;;
     "send")
-      echo "Message: "
+      printf "Message: "
       read message
+      output="[$(date +"%Y-%m-%d %H:%M")] [$(hostname)]"
+      printf "%-30s %s\n" $output $message >> ~/Dropbox/.$2-box
       ;;
   esac
 }
