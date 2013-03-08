@@ -164,6 +164,22 @@ function swap {
 # commands: send, receive, setup, help
 function broadcast {
   # WIP (basic functionality complete; add validation and fall-back locations)
+
+  if [ -z "$1" ]
+  then
+    echo "Please specify a command!"
+    angry_exit
+  fi
+
+  if [ -z "$2" ]
+  then
+    box="$(cat ~/.boxname)"
+    echo "No box specified. Using default: $box"
+  else
+    box=$2
+  fi
+
+
   case $1 in
     "setup")
       echo "Created a file called ~/.boxname that contains: $(hostname)"
@@ -171,20 +187,14 @@ function broadcast {
       touch ~/Dropbox/.$(hostname)-box
       ;;
     "receive")
-      if [ "$2" = "" ]
-      then
-        box="$(cat ~/.boxname)"
-      else
-        box=$2
-      fi
-      echo "reading broadcast messages from: $box"
+      echo "Reading broadcast messages from: $box"
       cat ~/Dropbox/.$box-box
       ;;
     "send")
       printf "Message: "
       read message
       output="[$(date +"%Y-%m-%d %H:%M")] [$(hostname)]"
-      printf "%-30s %s\n" $output $message >> ~/Dropbox/.$2-box
+      printf "%-35s %s\n" $output $message >> ~/Dropbox/.$box-box
       ;;
   esac
 }
