@@ -41,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # see: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse bundler)
-plugins=(git brew osx gem)
+plugins=(git brew osx gem zsh-syntax-highlighting)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
