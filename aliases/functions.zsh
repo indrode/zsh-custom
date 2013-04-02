@@ -211,3 +211,11 @@ function gmail {
   curl -u $MAILNAME@$1.com:$(cat ~/.oh-my-zsh/custom/.settings/.$1.email.setting) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
 }
 
+# disk space report (incl. mounted volumes)
+function space {
+  df -h | grep 'File' >> ~/.space
+  df -h | grep '/dev/' | grep -v '/private/' >> ~/.space
+  cat ~/.space
+  rm ~/.space
+}
+
