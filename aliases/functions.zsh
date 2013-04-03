@@ -214,7 +214,7 @@ function gmail {
 # disk space report (incl. mounted volumes)
 function space {
   df -h | grep 'File' | cut -c1-42 -c67- >> ~/.space
-  df -h | grep '/dev/' | cut -c1-42 -c67- | grep -v '/private/' >> ~/.space
+  df -Ph | grep '/dev/' | cut -c1-42 -c67- | grep -v '/private/' >> ~/.space
   cat ~/.space
   rm ~/.space
 }
