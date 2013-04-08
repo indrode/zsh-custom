@@ -5,6 +5,9 @@
 #setup zp-zsh
 alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
 
+#notify (require `gem install terminal-notifier`)
+alias notify='terminal-notifier -message'
+
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'
