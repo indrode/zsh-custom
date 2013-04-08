@@ -104,6 +104,3 @@ if [ -f "$HOME/.todos" ]; then
   echo "\n${txtcyn}Local TODOs:${txtrst}"
   . "$HOME/.todos"
 fi
-
-# default ruby
-chruby ruby-1.9.3
