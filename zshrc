@@ -78,7 +78,7 @@ fi
 . ~/.oh-my-zsh/custom/.settings
 
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
-  echo "\n${txtylw}"
+  echo "${txtylw}"
   cat $ZSH/custom/.settings/INTRO.setting
   echo "${txtrst}"
 fi
