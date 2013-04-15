@@ -2,6 +2,12 @@
 # - general functions for every day shell-ing -
 # ---------------------------------------------
 
+# shortcut to current date-stamped download folder
+function downl {
+  a=$(ls -tr ~/Downloads | tail -n1)
+  cd ~/Downloads/${a}
+}
+
 # exiting (not so) gracefully by killing the process
 function angry_exit {
   echo "${txtred}⚡⚡⚡ kthxbye!${txtrst}"
