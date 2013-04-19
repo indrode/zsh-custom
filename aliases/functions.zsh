@@ -2,6 +2,12 @@
 # - general functions for every day shell-ing -
 # ---------------------------------------------
 
+# shortcut to current date-stamped download folder
+function downl {
+  a=$(ls -tr ~/Downloads | tail -n1)
+  cd ~/Downloads/${a}
+}
+
 # exiting (not so) gracefully by killing the process
 function angry_exit {
   echo "${txtred}⚡⚡⚡ kthxbye!${txtrst}"
@@ -160,14 +166,62 @@ function swap {
 #             -> displays message of your local box (e.g. ~/Dropbox/.unagi-box)
 #             -> if other box name specified, it acts accordingly
 #
-# messages are tagged with a timestamp (date +"%m-%d-%Y %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
+# messages are tagged with a timestamp $(date +"%Y-%m-%d %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
 # commands: send, receive, setup, help
 function broadcast {
-  # WIP
+  # WIP (basic functionality complete; add validation and fall-back locations)
+
+  if [ -z "$1" ]
+  then
+    echo "Please specify a command!"
+    angry_exit
+  fi
+
+  if [ -z "$2" ]
+  then
+    box="$(cat ~/.boxname)"
+    echo "No box specified. Using default: $box"
+  else
+    box=$2
+  fi
+
+  case $1 in
+    "setup")
+      echo "Created a file called ~/.boxname that contains: $(hostname)"
+      hostname > ~/.boxname
+      touch ~/Dropbox/.$(hostname)-box
+      ;;
+    "receive")
+      echo "Reading broadcast messages from: $box"
+      cat ~/Dropbox/.$box-box
+      ;;
+    "send")
+      printf "Message: "
+      read message
+      output="[$(date +"%Y-%m-%d %H:%M")] [$(hostname)]"
+      printf "%-35s %s\n" $output $message >> ~/Dropbox/.$box-box
+      ;;
+    "help")
+      echo "Use `broadcast setup` to set up a default box."
+      echo "Commands: setup, send, receive, clear, help"
+      ;;
+    "clear")
+      echo "Removing all messages from: $box"
+      echo "" > ~/Dropbox/.$box-box
+      ;;
+  esac
 }
 
 # check number of unread emails
 function gmail {
   curl -u $MAILNAME@$1.com:$(cat ~/.oh-my-zsh/custom/.settings/.$1.email.setting) --silent 'https://mail.google.com/mail/feed/atom' | sed -n 's|<fullcount>\(.*\)</fullcount>|\1|p'
+}
+
+# disk space report (incl. mounted volumes)
+function space {
+  df -h | grep 'File' | cut -c1-42 -c67- >> ~/.space
+  df -Ph | grep '/dev/' | cut -c1-42 -c67- | grep -v '/private/' >> ~/.space
+  cat ~/.space
+  rm ~/.space
 }
 

@@ -35,8 +35,6 @@ function simfy {
 function init {
   case $1 in
     "simfy")
-      # RVM only
-      # rvm use ree
       thor redis:start development
       thor redis:start test
       ruby script/solr.rb start
@@ -70,10 +68,7 @@ function build {
   export RUBY_GC_MALLOC_LIMIT=100000000
   export RUBY_HEAP_FREE_MIN=500000
   export RAILS_ENV=test
-  # export TEST_DB=$1
   export CHECK_DATABASE=true
-  # export RSPEC_ORDER="--order rand"
-  # export RSPEC_ORDER="--order rand:60271"
 
   mkdir -p tmp
 

@@ -19,7 +19,7 @@ alias gsa='git stash apply'
 alias gsp='git stash pop'
 
 # 2. custom
-alias rev='git log -1 | grep commit | cut -c 8-'
+alias rev='git log -1 --pretty=%H'
 
 # 3. advanced (rarely used)
 alias gba='git branch -a'
@@ -38,5 +38,5 @@ alias gf="git fetch"
 alias gfix="git amend -C HEAD"
 
 # 4. github
-
 alias github-status="curl https://status.github.com/api/last-message.json"
+alias github-fullstatus="curl https://status.github.com/api/messages.json"

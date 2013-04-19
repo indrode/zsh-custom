@@ -41,7 +41,7 @@ COMPLETION_WAITING_DOTS="true"
 # see: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse bundler)
-plugins=(git brew osx gem)
+plugins=(git brew osx gem zsh-syntax-highlighting)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -59,6 +59,8 @@ export RUBYOPT="rubygems"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 # export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -68,9 +70,6 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
         alias $COMMAND="nocorrect $COMMAND"
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
-
-# rbenv
-# eval "$(rbenv init -)"
 
 # load aliases, shortcuts
 . ~/.oh-my-zsh/custom/aliases/general.zsh
@@ -83,7 +82,7 @@ fi
 . ~/.oh-my-zsh/custom/.settings
 
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
-  echo "\n${txtylw}"
+  echo "${txtylw}"
   cat $ZSH/custom/.settings/INTRO.setting
   echo "${txtrst}"
 fi
@@ -95,7 +94,6 @@ fi
 
 # display number of unread emails
 if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-  echo "\n${txtblu}You have $(gmail gmail) unread personal emails.${txtrst}"
   echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 fi
 
@@ -111,3 +109,4 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
+# chruby 2.0

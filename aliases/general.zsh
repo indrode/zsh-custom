@@ -5,12 +5,19 @@
 #setup zp-zsh
 alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
 
+#notify (require `gem install terminal-notifier`)
+alias notify='terminal-notifier -message'
+
 #ultimate grep
 #grep history for 'sudo' ---> hh|P sudo
 alias P='grep --color=auto -i'
 
 #command upgrades
 alias cp='cp -v'
+
+#chruby
+alias r193="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-1.9.3"
+alias r200="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-2.0.0"
 
 #alias
 alias aliases="cat $ZSHCUSTOM/aliases/git.zsh $ZSHCUSTOM/aliases/general.zsh"
@@ -29,6 +36,7 @@ alias grep="grep --color=auto"
 
 #navigation
 alias hh='history'
+alias tailh='history | tail -n20'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -50,13 +58,7 @@ alias init_transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
-# RVM only:
-#rmv
-# alias rvm-set='rvm --default use'
-# alias rvm-restart='rvm_reload_flag=1 source '\''$HOME/.rvm/scripts/rvm'\'''
-
 #redis
-# alias redis='/usr/local/bin/redis-server'
 alias redis-start='launchctl start io.redis.redis-server'
 alias redis-stop='launchctl stop io.redis.redis-server'
 
@@ -76,3 +78,6 @@ alias quiet="osascript -e 'set volume 0.5'"
 alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
+# MAC manipulators (see https://gist.github.com/jashkenas/5113149)
+alias random_mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
+# alias restore_mac='sudo ifconfig en0 ether YOUR_ORIGINAL_MAC_ADDRESS_GOES_HERE'
