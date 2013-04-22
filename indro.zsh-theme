@@ -14,7 +14,7 @@
 #     |      |        |         |                           |          |       |    |    |
 #  username  |       path       |                     battery charge   |   history  |    |
 #          host            error marker                              time           |  trash size
-                                                                              available space
+#                                                                             available space
 
 local returned_error="%(?..%{$fg[red]%}⚡ %{$reset_color%})"
 
