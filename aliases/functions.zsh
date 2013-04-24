@@ -8,6 +8,14 @@ function downl {
   cd ~/Downloads/${a}
 }
 
+function show_trash {
+  du -h ~/.Trash
+}
+
+function clean_trash {
+  rm -Rf ~/.Trash/*
+}
+
 # exiting (not so) gracefully by killing the process
 function angry_exit {
   echo "${txtred}⚡⚡⚡ kthxbye!${txtrst}"
