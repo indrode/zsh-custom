@@ -33,7 +33,7 @@ function available_disk_space {
 }
 
 function current_trash_size {
-  du -h ~/Trash | tail -n1 | cut -f 1 | tr -d ' '
+  du -h ~/.Trash | tail -n1 | cut -f 1 | tr -d ' '
 }
 
 PROMPT='
