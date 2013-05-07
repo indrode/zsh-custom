@@ -22,9 +22,9 @@ function battery_charge {
 }
 
 function horizontal_line {
-  local termwidth
-  (( termwidth = $COLUMNS - 1 ))
-  printf '—%.0s' {1..$termwidth}
+  # local termwidth
+  # (( termwidth = $COLUMNS - 1 ))
+  # printf '—%.0s' {1..$termwidth}
 }
 
 function available_disk_space {
