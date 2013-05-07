@@ -36,9 +36,7 @@ function current_trash_size {
   du -h ~/.Trash | tail -n1 | cut -f 1 | tr -d ' '
 }
 
-PROMPT='
-%{$FG[240]%}$(horizontal_line)
-[%m] %{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
+PROMPT='%{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
 
 RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %! %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
 
