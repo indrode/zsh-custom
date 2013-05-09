@@ -49,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 # customize to your needs...
 export HISTSIZE=100000
 export SAVEHIST=100000
+export HISTIGNORE="&:[ ]*:exit"
 export CC=/usr/local/bin/gcc-4.2
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
