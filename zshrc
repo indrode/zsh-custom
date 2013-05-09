@@ -57,7 +57,7 @@ source /usr/local/opt/chruby/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-export SOLR_BIN=/usr/local/Cellar/solr/3.6.1/libexec/example
+export SOLR_BIN=/usr/local/Cellar/solr/4.2.0/libexec/example
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
