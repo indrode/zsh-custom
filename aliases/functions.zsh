@@ -210,7 +210,7 @@ function broadcast {
       printf "%-35s %s\n" $output $message >> ~/Dropbox/.$box-box
       ;;
     "help")
-      echo "Use `broadcast setup` to set up a default box."
+      echo "Use \"broadcast setup\" to set up a default box."
       echo "Commands: setup, send, receive, clear, help"
       ;;
     "clear")
