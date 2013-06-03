@@ -17,6 +17,7 @@ alias gb='git branch'
 alias gss='git stash'
 alias gsa='git stash apply'
 alias gsp='git stash pop'
+alias gh='gl -- '
 
 # 2. custom
 alias rev='git log -1 --pretty=%H'
