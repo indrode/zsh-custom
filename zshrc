@@ -49,7 +49,6 @@ source $ZSH/oh-my-zsh.sh
 # customize to your needs...
 export HISTSIZE=100000
 export SAVEHIST=100000
-<<<<<<< HEAD
 export CC=/usr/bin/gcc-4.2
 export CC=/usr/local/bin/gcc-4.2
 export HISTIGNORE="&:[ ]*:exit"
@@ -60,14 +59,10 @@ export RUBYOPT="rubygems"
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-<<<<<<< HEAD
 # export PATH="$HOME/.rbenv/bin:$PATH"
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export SOLR_BIN=/usr/local/Cellar/solr/3.4.0/libexec/example
-=======
-export SOLR_BIN=/usr/local/Cellar/solr/4.2.0/libexec/example
->>>>>>> master
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
