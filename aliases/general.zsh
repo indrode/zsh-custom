@@ -3,7 +3,7 @@
 # -------------------
 
 #setup zp-zsh
-alias setup_zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
+alias setup-zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
 
 #notify (require `gem install terminal-notifier`)
 alias notify='terminal-notifier -message'
@@ -29,7 +29,7 @@ alias be='bundle exec'
 alias tbe='time bundle exec'
 
 #maintenance
-alias check_space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
+alias check-space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
 alias ip='ifconfig | grep cast | cut -c 6-20'
 alias pid="ps x | grep -i $1"
 alias grep="grep --color=auto"
@@ -53,7 +53,7 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 
 #tools
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
-alias init_transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
+alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
@@ -80,5 +80,5 @@ alias pumpitup="osascript -e 'set volume 10'"
 alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 # MAC manipulators (see https://gist.github.com/jashkenas/5113149)
-alias random_mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
-# alias restore_mac='sudo ifconfig en0 ether YOUR_ORIGINAL_MAC_ADDRESS_GOES_HERE'
+alias random-mac='sudo ifconfig en0 ether `openssl rand -hex 6 | sed "s/\(..\)/\1:/g; s/.$//"`'
+# alias restore-mac='sudo ifconfig en0 ether YOUR_ORIGINAL_MAC_ADDRESS_GOES_HERE'
