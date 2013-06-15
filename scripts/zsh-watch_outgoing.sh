@@ -12,7 +12,7 @@ check() {
     do
       chsum1=`find "$OUTGOING" -type f -exec ls {} \; | md5`
       chsum2=$chsum1
-          
+
       while [ "$chsum1" == "$chsum2" ]
       do
           sleep 5
