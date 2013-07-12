@@ -55,6 +55,9 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
 alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 
+#zeus
+alias z='zeus'
+
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
 alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
