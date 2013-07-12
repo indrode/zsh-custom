@@ -8,11 +8,11 @@ function downl {
   cd ~/Downloads/${a}
 }
 
-function show_trash {
+function show-trash {
   du -h ~/.Trash
 }
 
-function clean_trash {
+function clean-trash {
   rm -Rf ~/.Trash/*
 }
 
