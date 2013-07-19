@@ -3,4 +3,3 @@
 #
 # brainstormr=/Users/robbyrussell/Projects/development/planetargon/brainstormr
 #
-zshcustom=$HOME/.oh-my-zsh/custom
