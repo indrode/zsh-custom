@@ -7,18 +7,18 @@ This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup
 
 In your `~/.oh-my-zsh` directory, replace `custom` with the a clone of this repository.
 
-	rm -r custom
-	git clone git://github.com/indrode/zsh-custom.git custom
+  rm -r custom
+  git clone git://github.com/indrode/zsh-custom.git custom
 
 To keep all customized files within the repository, my `~/.zshrc` file looks like this:
 
-	# HINT: type 'ohmyzsh' to edit shell config files
-	. ~/.oh-my-zsh/custom/zshrc
+  # HINT: type 'ohmyzsh' to edit shell config files
+  . ~/.oh-my-zsh/custom/zshrc
 
 Restart the shell and run `setup_zsh` to create the configuration file.
 
-	exec $SHELL
-	setup_zsh
+  exec $SHELL
+  setup_zsh
 
 ## Available disk space
 
@@ -28,7 +28,7 @@ Add a `.hd` file to the root of the repository, which will be gitignored and hol
 
 The default settings for Sublime Text 2 in `/settings` need to be moved to Sublime Text's `/Packages/Default` folder:
 
-	~/Library/Application Support/Sublime Text 2/Packages/Default
+  ~/Library/Application Support/Sublime Text 2/Packages/Default
 
 Read more about setting up Gmail-account checking in the `.settings` section: [https://github.com/indrode/zsh-custom/tree/master/.settings](https://github.com/indrode/zsh-custom/tree/master/.settings).
 
