@@ -15,7 +15,7 @@ then
   source $CONFIG_FILE
 else
   echo "File $CONFIG_FILE does not exist. Please create configuration files by running:"
-  echo "  setup_zsh"
+  echo "  setup-zsh"
 fi
 
 # simpler bash text colors and attributes
