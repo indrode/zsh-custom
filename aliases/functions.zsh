@@ -49,6 +49,11 @@ function pdfman() {
   man $1 -t | open -f -a Preview;
 }
 
+function mdax {
+  MDAX=$(curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s=EXS3.DE&f=l1')
+  echo "MDAX: $MDAX"
+}
+
 # todo list manager v2
 # run:
 #   todo <scope>
