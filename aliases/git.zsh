@@ -21,6 +21,8 @@ alias gh='gl -- '
 
 # 2. custom
 alias rev='git log -1 --pretty=%H'
+alias copyrev='git log -1 --pretty=%H | pbcopy'
+
 
 # 3. advanced (rarely used)
 alias gba='git branch -a'
