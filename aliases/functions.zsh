@@ -16,6 +16,12 @@ function clean-trash {
   rm -Rf ~/.Trash/*
 }
 
+# gitio script to shorten urls from command line
+# see: https://gist.github.com/defunkt/1209316
+function gitio {
+  $ZSHCUSTOM/scripts/gitio.rb $1
+}
+
 # exiting (not so) gracefully by killing the process
 function angry_exit {
   echo "${txtred}⚡⚡⚡ kthxbye!${txtrst}"
