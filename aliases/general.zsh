@@ -27,6 +27,7 @@ alias aliases-reload="source $ZSHCUSTOM/aliases/general.zsh"
 #bundler
 alias be='bundle exec'
 alias tbe='time bundle exec'
+alias ber='nocorrect bundle exec rspec'
 
 #maintenance
 alias check-space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
