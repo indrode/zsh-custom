@@ -35,8 +35,8 @@ function simfy {
 function init {
   case $1 in
     "simfy")
-      thor redis:start development
-      thor redis:start test
+      ruby script/services start_redis ./tmp/redis/redis_development
+      ruby script/services start_redis ./tmp/redis/redis_test
       ruby script/solr.rb start
       ;;
     "help")
