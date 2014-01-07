@@ -37,7 +37,7 @@ function current_trash_size {
 }
 
 PROMPT='
-%{$bg[yellow]%}$fg[black]%} %m %{$reset_color%} %{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
+%{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
 
 RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %! %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
 
