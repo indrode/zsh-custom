@@ -54,6 +54,8 @@ export CC=/usr/local/bin/gcc-4.2
 export HISTIGNORE="&:[ ]*:exit"
 export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # RVM only:
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
