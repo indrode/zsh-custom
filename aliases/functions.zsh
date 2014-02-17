@@ -60,6 +60,11 @@ function mdax {
   echo "MDAX: $MDAX"
 }
 
+function tdax {
+  TDAX=$(curl -s 'http://download.finance.yahoo.com/d/quotes.csv?s=EXS2.DE&f=l1')
+  echo "TDAX: $TDAX"
+}
+
 # todo list manager v2
 # run:
 #   todo <scope>
