@@ -45,6 +45,7 @@ plugins=(git brew osx gem zsh-syntax-highlighting)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+source $ZSHCUSTOM/scripts/iterm2.zsh
 
 # customize to your needs...
 export HISTSIZE=100000
