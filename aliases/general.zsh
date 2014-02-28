@@ -37,6 +37,7 @@ alias grep="grep --color=auto"
 
 #navigation
 alias hh='history'
+alias hs='history | grep --color=auto'
 alias tailh='history | tail -n20'
 alias ..='cd ..'
 alias ...='cd ../..'
