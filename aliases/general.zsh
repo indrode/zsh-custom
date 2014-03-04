@@ -37,6 +37,7 @@ alias grep="grep --color=auto"
 
 #navigation
 alias hh='history'
+alias hs='history | grep --color=auto'
 alias tailh='history | tail -n20'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -59,7 +60,7 @@ alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 #zeus
 alias z='zeus'
 alias zstart='zeus start'
-alias zrspec='zeus rspec'
+alias zr='zeus rspec'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
