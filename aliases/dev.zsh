@@ -37,7 +37,6 @@ function init {
     "simfy")
       ruby script/services start_redis ./tmp/redis/redis_development
       ruby script/services start_redis ./tmp/redis/redis_test
-      # ruby script/solr.rb start
       ;;
     "help")
       echo "Help not available yet!"

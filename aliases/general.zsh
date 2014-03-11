@@ -70,11 +70,6 @@ alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 alias redis-start='launchctl start io.redis.redis-server'
 alias redis-stop='launchctl stop io.redis.redis-server'
 
-#solr
-alias solr-server='solr simfy > ~/.logs/solr.log 2>&1 &'
-alias solr-start='be ruby script/solr.rb start'
-alias solr-bootstrap='be ruby script/solr.rb bootstrap'
-
 #hal screensaver commands
 alias hal9000="cd /System/Library/Frameworks/ScreenSaver.framework/Resources && nohup ./ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &"
 alias hal-exit="kill `ps -ef |grep ScreenSaverEngine|grep -v grep|awk {'print $2'}`"
