@@ -8,6 +8,16 @@ function chpwd() {
   esac
 }
 
+function deploy! {
+  git log -1 --pretty=%H | pbcopy
+  bundle exec cap production deploy
+}
+
+function staging-deploy! {
+  git log -1 --pretty=%H | pbcopy
+  bundle exec cap staging deploy
+}
+
 function migrate {
   be rake db:migrate
   be rake db:test:prepare
