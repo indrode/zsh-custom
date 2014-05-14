@@ -30,6 +30,7 @@ alias tbe='time bundle exec'
 alias ber='nocorrect bundle exec rspec'
 
 #maintenance
+alias lsdu='du -csh $(pwd)'
 alias check-space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
 alias ip='ifconfig | grep cast | cut -c 6-20'
 alias pid="ps x | grep -i $1"
