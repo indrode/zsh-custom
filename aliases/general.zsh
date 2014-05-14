@@ -30,6 +30,7 @@ alias tbe='time bundle exec'
 alias ber='nocorrect bundle exec rspec'
 
 #maintenance
+alias lsdu='du -csh $(pwd)'
 alias check-space='du -h ~/ | grep "^[0-9]*.[0-9]G"'
 alias ip='ifconfig | grep cast | cut -c 6-20'
 alias pid="ps x | grep -i $1"
@@ -61,6 +62,7 @@ alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 alias z='zeus'
 alias zstart='zeus start'
 alias zr='zeus rspec'
+alias zc='zeus cucumber'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
