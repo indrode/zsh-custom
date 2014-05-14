@@ -61,6 +61,7 @@ alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
 alias z='zeus'
 alias zstart='zeus start'
 alias zr='zeus rspec'
+alias zc='zeus cucumber'
 
 #mysql
 alias mysql='/usr/local/mysql/bin/mysql'
