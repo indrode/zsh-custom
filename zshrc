@@ -59,7 +59,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
 # RVM only:
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
+
+source /usr/local/opt/chruby/share/chruby/chruby.sh
+source /usr/local/share/chruby/auto.sh
 
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 # export PATH="$HOME/.rbenv/bin:$PATH"
@@ -112,4 +115,4 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
-# chruby 2.0
+chruby 2.0
