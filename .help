@@ -1,4 +1,0 @@
-run builds locally:
-build (simfy|cucumber|cucumber_admin|cucumber_api|cucumber_search|spec|spec_integration)
-
-(more to follow)

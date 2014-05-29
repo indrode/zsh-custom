@@ -8,4 +8,4 @@ export MAILNAME="indro.de"
 export EDITOR=subl
 
 # your ruby version manager, e.g. rvm, rbenv, chruby
-export RUBY_VM=rbenv
+export RUBY_VM=chruby
