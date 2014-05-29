@@ -14,6 +14,7 @@ alias P='grep --color=auto -i'
 
 #command upgrades
 alias cp='cp -v'
+alias mv='mv -v'
 
 #chruby
 alias r193="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-1.9.3"
