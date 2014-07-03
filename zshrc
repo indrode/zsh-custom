@@ -48,8 +48,11 @@ source $ZSH/oh-my-zsh.sh
 source $ZSHCUSTOM/scripts/iterm2.zsh
 
 # customize to your needs...
+shopt -s histappend
 export HISTSIZE=100000
 export SAVEHIST=100000
+export HISTFILESIZE=100000
+export HISTCONTROL=ignoredups:erasedups
 export CC=/usr/bin/gcc-4.2
 export CC=/usr/local/bin/gcc-4.2
 export HISTIGNORE="&:[ ]*:exit"
