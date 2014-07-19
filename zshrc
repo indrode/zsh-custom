@@ -118,4 +118,5 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
+unalias mysql
 chruby 2.0

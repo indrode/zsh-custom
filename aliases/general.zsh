@@ -66,8 +66,8 @@ alias zr='zeus rspec'
 alias zc='zeus cucumber'
 
 #mysql
-alias mysql='/usr/local/mysql/bin/mysql'
-alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
+#alias mysql='/usr/local/mysql/bin/mysql'
+#alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
 
 #redis
 alias redis-start='launchctl start io.redis.redis-server'
