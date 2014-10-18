@@ -118,4 +118,4 @@ if [ -f "$HOME/.todos" ]; then
 fi
 
 unalias mysql
-chruby 2.0
+chruby 2.1.3
