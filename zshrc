@@ -48,7 +48,6 @@ source $ZSH/oh-my-zsh.sh
 source $ZSHCUSTOM/scripts/iterm2.zsh
 
 # customize to your needs...
-shopt -s histappend
 export HISTSIZE=100000
 export SAVEHIST=100000
 export HISTFILESIZE=100000
@@ -102,9 +101,9 @@ if [ -f "$ZSH/custom/.settings/ENABLE_SWAP.setting" ]; then
 fi
 
 # display number of unread emails
-if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-  echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
-fi
+#if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
+#  echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
+#fi
 
 # global todos (stored in the cloud)
 if [ -f "$HOME/Sync/raven/.todos" ]; then
