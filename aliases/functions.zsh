@@ -74,7 +74,7 @@ function todo {
   case $1 in
     "global")
       echo "${txtgrn}${txtbld}<<GLOBAL SCOPE>>${txtrst}"
-      todos_file=$HOME/Dropbox/.todos
+      todos_file=$HOME/Sync/raven/.todos
       ;;
     "local")
       echo "${txtgrn}${txtbld}<<LOCAL SCOPE>>${txtrst}"
@@ -87,7 +87,7 @@ function todo {
 
       if [ "$scope" = "global" ]
       then
-        $EDITOR $HOME/Dropbox/.todos
+        $EDITOR $HOME/Sync/raven/.todos
       else
         $EDITOR $HOME/.todos
       fi
@@ -121,10 +121,10 @@ function todo {
 #   stash get
 function stash {
   ok_notice="${txtylw}--> OK${txtrst}"
-  source_file=$HOME/Dropbox/.stash
+  source_file=$HOME/Sync/raven/.stash
   case $1 in
     "status")
-      word_count="$(wc -l ~/Dropbox/.stash | cut -d "/" -f1 | tr -d ' ')"
+      word_count="$(wc -l ~/Sync/raven/.stash | cut -d "/" -f1 | tr -d ' ')"
       echo "${txtcyn}There are $(echo "$word_count - 1" | bc) rows in the stashfile.${txtrst}"
       ;;
     "kill")
@@ -181,13 +181,13 @@ function swap {
 #   (3) broadcast receive (optional: box-name)
 # where <box-name> is the unique identifier of the remote box as set up in the remote .box-name
 #
-# (1) this command sets up the required files (~/.boxname and ~/Dropbox/.unagi-box)
+# (1) this command sets up the required files (~/.boxname and ~/Sync/raven/.unagi-box)
 #             -> ~/.boxname includes the name of the local box => unagi
-#             -> ~/Dropbox/.unagi-box will hold the broadcast messages
-# (2) this command sends a message to the remote box via Dropbox
-#             -> stores a message in ~/Dropbox/.sashimi-box if that file exists
+#             -> ~/Sync/raven/.unagi-box will hold the broadcast messages
+# (2) this command sends a message to the remote box via Sync/raven
+#             -> stores a message in ~/Sync/raven/.sashimi-box if that file exists
 # (3) this command displays any received messages for the current box (or an optionally passed box name)
-#             -> displays message of your local box (e.g. ~/Dropbox/.unagi-box)
+#             -> displays message of your local box (e.g. ~/Sync/raven/.unagi-box)
 #             -> if other box name specified, it acts accordingly
 #
 # messages are tagged with a timestamp $(date +"%Y-%m-%d %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
@@ -213,17 +213,17 @@ function broadcast {
     "setup")
       echo "Created a file called ~/.boxname that contains: $(hostname)"
       hostname > ~/.boxname
-      touch ~/Dropbox/.$(hostname)-box
+      touch ~/Sync/raven/.$(hostname)-box
       ;;
     "receive")
       echo "Reading broadcast messages from: $box"
-      cat ~/Dropbox/.$box-box
+      cat ~/Sync/raven/.$box-box
       ;;
     "send")
       printf "Message: "
       read message
       output="[$(date +"%Y-%m-%d %H:%M")] [$(hostname)]"
-      printf "%-35s %s\n" $output $message >> ~/Dropbox/.$box-box
+      printf "%-35s %s\n" $output $message >> ~/Sync/raven/.$box-box
       ;;
     "help")
       echo "Use \"broadcast setup\" to set up a default box."
@@ -231,7 +231,7 @@ function broadcast {
       ;;
     "clear")
       echo "Removing all messages from: $box"
-      echo "" > ~/Dropbox/.$box-box
+      echo "" > ~/Sync/raven/.$box-box
       ;;
   esac
 }

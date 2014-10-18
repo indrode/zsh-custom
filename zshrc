@@ -107,9 +107,9 @@ if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
 fi
 
 # global todos (stored in the cloud)
-if [ -f "$HOME/Dropbox/.todos" ]; then
+if [ -f "$HOME/Sync/raven/.todos" ]; then
   echo "\n${txtcyn}Global TODOs:${txtrst}"
-  . "$HOME/Dropbox/.todos"
+  . "$HOME/Sync/raven/.todos"
 fi
 
 # local todos
