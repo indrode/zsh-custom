@@ -171,19 +171,19 @@ function swap {
   echo "moved to $TARGET_HOST:~/Incoming/$2"
 }
 
-# broadcast
+# raven
 # sends a message to another box (one-way transmission)
 # run:
-#   broadcast <command> <box-name>
+#   raven <command> <box-name>
 # e.g.:
-#   (1) broadcast setup unagi
-#   (2) broadcast send sashimi
-#   (3) broadcast receive (optional: box-name)
+#   (1) raven setup unagi
+#   (2) raven send sashimi
+#   (3) raven receive (optional: box-name)
 # where <box-name> is the unique identifier of the remote box as set up in the remote .box-name
 #
 # (1) this command sets up the required files (~/.boxname and ~/Sync/raven/.unagi-box)
 #             -> ~/.boxname includes the name of the local box => unagi
-#             -> ~/Sync/raven/.unagi-box will hold the broadcast messages
+#             -> ~/Sync/raven/.unagi-box will hold the raven messages
 # (2) this command sends a message to the remote box via Sync/raven
 #             -> stores a message in ~/Sync/raven/.sashimi-box if that file exists
 # (3) this command displays any received messages for the current box (or an optionally passed box name)
@@ -192,7 +192,7 @@ function swap {
 #
 # messages are tagged with a timestamp $(date +"%Y-%m-%d %H:%M") and the source box name, e.g. [05-31-2012 16:59][unagi] message foo bar
 # commands: send, receive, setup, help
-function broadcast {
+function raven {
   # WIP (basic functionality complete; add validation and fall-back locations)
 
   if [ -z "$1" ]
@@ -216,7 +216,7 @@ function broadcast {
       touch ~/Sync/raven/.$(hostname)-box
       ;;
     "receive")
-      echo "Reading broadcast messages from: $box"
+      echo "Reading raven messages from: $box"
       cat ~/Sync/raven/.$box-box
       ;;
     "send")
@@ -226,7 +226,7 @@ function broadcast {
       printf "%-35s %s\n" $output $message >> ~/Sync/raven/.$box-box
       ;;
     "help")
-      echo "Use \"broadcast setup\" to set up a default box."
+      echo "Use \"raven setup\" to set up a default box."
       echo "Commands: setup, send, receive, clear, help"
       ;;
     "clear")
