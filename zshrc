@@ -59,16 +59,6 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-
-# RVM only:
-#[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # this loads RVM into a shell session.
-
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/share/chruby/auto.sh
-
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
-# export PATH="$HOME/.rbenv/bin:$PATH"
-
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
@@ -105,6 +95,23 @@ fi
 #  echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
 #fi
 
+# set ruby version
+
+if [ "$RUBY_MANAGER" = "chruby" ]
+  then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/share/chruby/auto.sh
+  chruby 2.1.3
+fi
+
+if [ "$RUBY_MANAGER" = "rbenv" ]
+  then
+  export RBENV_ROOT=/usr/local/var/rbenv
+  if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+fi
+
+echo "[$RUBY_MANAGER] $(ruby -v)"
+
 # global todos (stored in the cloud)
 if [ -f "$HOME/Sync/raven/.todos" ]; then
   echo "\n${txtcyn}Global TODOs:${txtrst}"
@@ -118,4 +125,3 @@ if [ -f "$HOME/.todos" ]; then
 fi
 
 unalias mysql
-chruby 2.1.3

@@ -9,3 +9,6 @@ export EDITOR=subl
 
 # swap outgoing folder
 export OUTGOING="$HOME/Outgoing"
+
+# name of ruby manager, e.g. chruby, rbenv
+export RUBY_MANAGER='chruby'
