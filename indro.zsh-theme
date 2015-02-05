@@ -5,7 +5,7 @@
 # - signals when previous command returned error
 # - current battery charge status
 # - time
-# - zsh history number
+# - zsh history number (removed)
 # - free space (plus space used by ~Trash)
 # - git branch and clean/dirty status
 # - readjusts on window resize
@@ -39,7 +39,7 @@ function current_trash_size {
 PROMPT='
 %{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
 
-RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %! %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
+RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[yellow]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}]%{$reset_color%}"
