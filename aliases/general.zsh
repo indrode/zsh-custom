@@ -66,6 +66,9 @@ alias zstart='zeus start'
 alias zr='zeus rspec'
 alias zc='zeus cucumber'
 
+#workflow
+alias br='bundle exec rspec'
+
 #mysql
 #alias mysql='/usr/local/mysql/bin/mysql'
 #alias mysqladmin='/usr/local/mysql/bin/mysqladmin'
