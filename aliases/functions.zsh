@@ -35,9 +35,14 @@ function blacklist {
 }
 
 # go to project folder
-function cdmy {
+function cdmy() {
   cd ~/Projects/$1
 }
+
+_cdmy() {
+  _files -W ~/Projects
+}
+compdef _cdmy cdmy
 
 # opens an application from /Applications
 function go {
