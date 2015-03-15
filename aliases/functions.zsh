@@ -2,12 +2,6 @@
 # - general functions for every day shell-ing -
 # ---------------------------------------------
 
-# shortcut to current date-stamped download folder
-function downl {
-  a=$(ls -tr ~/Downloads | tail -n1)
-  cd ~/Downloads/${a}
-}
-
 function show-trash {
   du -h ~/.Trash
 }
