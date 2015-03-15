@@ -60,6 +60,7 @@ export RUBYOPT="rubygems"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/casks"
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
