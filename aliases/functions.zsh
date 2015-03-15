@@ -38,16 +38,19 @@ function blacklist {
 function cdmy() {
   cd ~/Projects/$1
 }
-
 _cdmy() {
   _files -W ~/Projects
 }
 compdef _cdmy cdmy
 
 # opens an application from /Applications
-function go {
-  open "/Applications/$1.app"
+function go() {
+  open /Applications/$1
 }
+_go() {
+  _files -W /Applications
+}
+compdef _go go
 
 # open man pages in Preview
 function pdfman() {
