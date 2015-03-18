@@ -23,9 +23,25 @@ Restart the shell and run `setup-zsh` to create the configuration file.
     exec $SHELL
     setup-zsh
 
+## Personal settings
+
+Adjust the settings in `.settings/CONFIG.setting` to your liking.
+
+    # name of the zsh theme to be used
+    export ZSH_THEME="indro"
+
+    # your preferred text editor, e.g. mate, subl, vim, nano
+    export EDITOR=subl
+
+    # name of ruby manager, e.g. chruby, rbenv
+    export RUBY_MANAGER='chruby'
+
+    # hard drive used prompt
+    export MAIN_HD='/dev/disk1'
+
 ## Available disk space
 
-Adjust the MAIN_HD variable in .settings/CONFIG.setting to hold the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
+Adjust the MAIN_HD variable in `.settings/CONFIG.setting` to hold the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
 
 ## The shell prompt
 

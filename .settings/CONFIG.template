@@ -1,14 +1,8 @@
 # name of the zsh theme to be used
 export ZSH_THEME="indro"
 
-# name part of your email address, e.g. {name}@gmail.com
-export MAILNAME="indro.de"
-
 # your preferred text editor, e.g. mate, subl, vim, nano
 export EDITOR=subl
-
-# swap outgoing folder
-export OUTGOING="$HOME/Outgoing"
 
 # name of ruby manager, e.g. chruby, rbenv
 export RUBY_MANAGER='chruby'
