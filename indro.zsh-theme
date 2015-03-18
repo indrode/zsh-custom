@@ -29,7 +29,7 @@ function horizontal_line {
 }
 
 function available_disk_space {
-  df -H | grep $(cat ~/.oh-my-zsh/custom/.hd) | tr -s ' ' '=' | cut -d '=' -f4
+  df -H | grep $MAIN_HD | tr -s ' ' '=' | cut -d '=' -f4
 }
 
 function current_trash_size {
