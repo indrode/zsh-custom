@@ -1,19 +1,35 @@
 # User-specific settings
 
-Add your settings (*.setting) files here (in `.settings/`)to customize your personal ZSH configuration. For example, The following settings are supported:
+Adjust your settings files (in `.settings/`) to customize your personal ZSH configuration. The following setting files are currently supported:
 
-    CHECK_MAIL.setting
-    .*.email.setting
-    INTRO.setting
+    config
+    intro
 
-## CHECK_MAIL
+## Config
 
-To get the `gmail` command work without having to enter your password manually each time, create a hidden file `.gmail.email.setting`) in the `/custom` folder that includes your Gmail password (and nothing else). Now, you can run `gmail gmail`. This allows you to create unlimited Gmail accounts. Note that you can create files for any Gmail-hosted accounts. Just name the hidden setting file acording to the Gmail-enabled domain (without TLD).
+This is the default `config` file that is generating when running `setup-zsh`.
 
-This option is only available if the `CHECK_MAIL.setting` exists in this folder.
+The `ZSH_THEME` settings sets the theme to be used:
 
-    touch .settings/CHECK_MAIL.setting
+    # name of the zsh theme to be used
+    export ZSH_THEME="indro"
 
-## INTRO
+Specify the text editor you want to use:
 
-On each session start, the contents of the `INTRO.setting` files are displayed in the shell. Use this for specifying a welcome message, some ascii art maybe, or anything else.
+    # your preferred text editor, e.g. mate, subl, vim, nano
+    export EDITOR=subl
+
+Three different Ruby version managers are supported. Specify the one you use:
+
+    # name of ruby manager, e.g. chruby, rbenv
+    export RUBY_MANAGER='chruby'
+
+In the `indro` shell prompt, the amount of free disk space of one hard drive is displayed. With this setting you can chose, which hard drive you want to use:
+
+    # hard drive used prompt
+    export MAIN_HD='/dev/disk1'
+
+
+## Intro
+
+On each session start, the content of the `intro` file is displayed in the shell. Use this for specifying a welcome message, some ascii art maybe, or anything else.

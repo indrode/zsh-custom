@@ -25,7 +25,7 @@ Restart the shell and run `setup-zsh` to create the configuration file.
 
 ## Personal settings
 
-Adjust the settings in `.settings/CONFIG.setting` to your liking.
+Adjust the settings in `.settings/config` to your liking.
 
     # name of the zsh theme to be used
     export ZSH_THEME="indro"
@@ -39,13 +39,11 @@ Adjust the settings in `.settings/CONFIG.setting` to your liking.
     # hard drive used prompt
     export MAIN_HD='/dev/disk1'
 
-## Available disk space
-
-Adjust the MAIN_HD variable in `.settings/CONFIG.setting` to hold the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
+Refer to [https://github.com/indrode/zsh-custom/tree/master/.settings](https://github.com/indrode/zsh-custom/tree/master/.settings) for more detailed explanations regarding settings.
 
 ## The shell prompt
 
-This setup uses my custom prompt. You can view it [here](https://github.com/indrode/zsh-custom/blob/master/indro.zsh-theme).
+This setup uses my custom prompt. You can view it [here](https://github.com/indrode/zsh-custom/blob/master/indro.zsh-theme). Adjust the setting to use a different prompt.
 
 ## Contributing
 
