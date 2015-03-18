@@ -167,4 +167,3 @@ function space {
   cat ~/.space
   rm ~/.space
 }
-
