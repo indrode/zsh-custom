@@ -27,6 +27,14 @@ Restart the shell and run `setup-zsh` to create the configuration file.
 
 Adjust the MAIN_HD variable in .settings/CONFIG.setting to hold the hard drive grep string, i.e. a string that identifies the desired hard drive in a `df` command. This is used to determine the free space in the custom terminal prompt.
 
-## Prompt
+## The shell prompt
 
 This setup uses my custom prompt. You can view it [here](https://github.com/indrode/zsh-custom/blob/master/indro.zsh-theme).
+
+## Contributing
+
+1. Fork it ( https://github.com/indrode/zsh-custom/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
