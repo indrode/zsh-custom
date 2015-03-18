@@ -70,30 +70,20 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
 
+# load settings
+. ~/.oh-my-zsh/custom/.settings
+
 # load aliases and functions
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
 . ~/.oh-my-zsh/custom/functions/general.zsh
 . ~/.oh-my-zsh/custom/functions/dev.zsh
 
-# load settings
-. ~/.oh-my-zsh/custom/.settings
-
 if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
   echo "${txtylw}"
   cat $ZSH/custom/.settings/INTRO.setting
   echo "${txtrst}"
 fi
-
-# display swapfile status
-if [ -f "$ZSH/custom/.settings/ENABLE_SWAP.setting" ]; then
-  swap status
-fi
-
-# display number of unread emails
-#if [ -f "$ZSH/custom/.settings/CHECK_MAIL.setting" ]; then
-#  echo "${txtblu}You have $(gmail simfy) unread simfy emails.${txtrst}"
-#fi
 
 # set ruby version
 
