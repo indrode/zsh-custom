@@ -51,9 +51,8 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 alias ls='ls -G'
-alias l='exa'
-alias ll='exa -lha'
-alias lls='exa -bghHliSa'
+alias l='ls -l'
+alias ll='ls -lha'
 alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists then if target of window 1 as string is not \":\" then get POSIX path of (target of window 1 as alias)"`'
 
 #tools
