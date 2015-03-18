@@ -10,34 +10,42 @@ This is the `/custom` folder in my `~/.oh-my-zsh`. It contains my personal setup
 
 This assumes that you have a working [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh). In your `~/.oh-my-zsh` directory, replace `custom` with the git clone of this repository.
 
-    ~/.oh-my-zsh
-    rm -r custo
-    git clone git://github.com/indrode/zsh-custom.git custom
+```bash
+~/.oh-my-zsh
+rm -r custo
+git clone git://github.com/indrode/zsh-custom.git custom
+````
 
 Next, replace your `~/.zshrc` with a symlink to `~/.oh-my-zsh/custom/zshrc`. You may want to make a backup of your `~/.zshrc` if you desire.
 
-    rm ~/.zshrc && ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
+```bash
+rm ~/.zshrc && ln -s ~/.oh-my-zsh/custom/zshrc ~/.zshrc
+```
 
 Restart the shell and run `setup-zsh` to create the configuration file.
 
-    exec $SHELL
-    setup-zsh
+```bash
+exec $SHELL
+setup-zsh
+```
 
 ## Personal settings
 
 Adjust the settings in `settings/config` to your liking.
 
-    # name of the zsh theme to be used
-    export ZSH_THEME="indro"
+```bash
+# name of the zsh theme to be used
+export ZSH_THEME="indro"
 
-    # your preferred text editor, e.g. mate, subl, vim, nano
-    export EDITOR=subl
+# your preferred text editor, e.g. mate, subl, vim, nano
+export EDITOR=subl
 
-    # name of ruby manager, e.g. chruby, rbenv
-    export RUBY_MANAGER='chruby'
+# name of ruby manager, e.g. chruby, rbenv
+export RUBY_MANAGER='chruby'
 
-    # hard drive used prompt
-    export MAIN_HD='/dev/disk1'
+# hard drive used prompt
+export MAIN_HD='/dev/disk1'
+```
 
 Refer to [https://github.com/indrode/zsh-custom/tree/master/settings](https://github.com/indrode/zsh-custom/tree/master/settings) for more detailed explanations regarding settings.
 
