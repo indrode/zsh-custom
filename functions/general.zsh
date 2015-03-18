@@ -160,19 +160,6 @@ function stash {
   esac
 }
 
-# swap
-# quick file transfer to specified host
-# target host name is specified in .settings/CONFIG.setting
-# requires a private/public key ssh authentication setup to target host
-# run:
-#   swap <filename>
-# e.g.:
-#   (1) swap myfile.txt
-function swap {
-  scp $1 $TARGET_HOST:~/Incoming/$2
-  echo "moved to $TARGET_HOST:~/Incoming/$2"
-}
-
 # raven
 # sends a message to another box (one-way transmission)
 # run:
