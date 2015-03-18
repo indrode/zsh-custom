@@ -1,4 +1,2 @@
-.gmail
-.simfy
-.hd
-.settings/*.setting
+settings/config
+settings/intro

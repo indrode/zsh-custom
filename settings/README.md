@@ -1,6 +1,6 @@
 # User-specific settings
 
-Adjust your settings files (in `.settings/`) to customize your personal ZSH configuration. The following setting files are currently supported:
+Adjust your settings files (in `/settings`) to customize your personal ZSH configuration. The following setting files are currently supported:
 
     config
     intro

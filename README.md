@@ -25,7 +25,7 @@ Restart the shell and run `setup-zsh` to create the configuration file.
 
 ## Personal settings
 
-Adjust the settings in `.settings/config` to your liking.
+Adjust the settings in `settings/config` to your liking.
 
     # name of the zsh theme to be used
     export ZSH_THEME="indro"
@@ -39,7 +39,7 @@ Adjust the settings in `.settings/config` to your liking.
     # hard drive used prompt
     export MAIN_HD='/dev/disk1'
 
-Refer to [https://github.com/indrode/zsh-custom/tree/master/.settings](https://github.com/indrode/zsh-custom/tree/master/.settings) for more detailed explanations regarding settings.
+Refer to [https://github.com/indrode/zsh-custom/tree/master/settings](https://github.com/indrode/zsh-custom/tree/master/settings) for more detailed explanations regarding settings.
 
 ## The shell prompt
 

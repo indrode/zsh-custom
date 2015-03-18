@@ -9,7 +9,8 @@ export ZSH=$HOME/.oh-my-zsh
 export ZSHCUSTOM=$HOME/.oh-my-zsh/custom
 
 # personal settings
-CONFIG_FILE=$ZSH/custom/.settings/CONFIG.setting
+CONFIG_FILE=$ZSH/custom/settings/config
+
 if [ -f $CONFIG_FILE ];
 then
   source $CONFIG_FILE
@@ -71,7 +72,7 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
 fi
 
 # load settings
-. ~/.oh-my-zsh/custom/.settings
+. ~/.oh-my-zsh/custom/settings
 
 # load aliases and functions
 . ~/.oh-my-zsh/custom/aliases/general.zsh
@@ -79,9 +80,9 @@ fi
 . ~/.oh-my-zsh/custom/functions/general.zsh
 . ~/.oh-my-zsh/custom/functions/dev.zsh
 
-if [ -f "$ZSH/custom/.settings/INTRO.setting" ]; then
+if [ -f "$ZSH/custom/settings/intro" ]; then
   echo "${txtylw}"
-  cat $ZSH/custom/.settings/INTRO.setting
+  cat $ZSH/custom/settings/intro
   echo "${txtrst}"
 fi
 
