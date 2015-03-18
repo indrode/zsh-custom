@@ -73,9 +73,8 @@ fi
 # load aliases and functions
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
-. ~/.oh-my-zsh/custom/functions/functions.zsh
+. ~/.oh-my-zsh/custom/functions/general.zsh
 . ~/.oh-my-zsh/custom/functions/dev.zsh
-. ~/.oh-my-zsh/custom/shortcuts.zsh
 
 # load settings
 . ~/.oh-my-zsh/custom/.settings
