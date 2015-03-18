@@ -70,11 +70,11 @@ if [ -f $ZSHCUSTOM/zsh_nocorrect ]; then
     done < $ZSHCUSTOM/zsh_nocorrect
 fi
 
-# load aliases, shortcuts
+# load aliases and functions
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
-. ~/.oh-my-zsh/custom/aliases/functions.zsh
-. ~/.oh-my-zsh/custom/aliases/dev.zsh
+. ~/.oh-my-zsh/custom/functions/functions.zsh
+. ~/.oh-my-zsh/custom/functions/dev.zsh
 . ~/.oh-my-zsh/custom/shortcuts.zsh
 
 # load settings
