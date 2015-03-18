@@ -9,8 +9,8 @@ alias setup-zsh='cd $ZSHCUSTOM && sh setup.sh && cd -'
 alias notify='terminal-notifier -message'
 
 #ultimate grep
-#grep history for 'sudo' ---> hh|P sudo
-alias P='grep --color=auto -i'
+#grep history for 'sudo' ---> hh G sudo
+alias -g G='| grep --color=auto -i'
 
 #command upgrades
 alias cp='cp -v'
