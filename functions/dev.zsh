@@ -2,12 +2,6 @@
 # - functions to assist development -
 # -----------------------------------
 
-function chpwd() {
-  case $PWD in
-    ~/Projects/simfy) echo "Welcome!";;
-  esac
-}
-
 function deploy! {
   git log -1 --pretty=%H | pbcopy
   bundle exec cap production deploy
