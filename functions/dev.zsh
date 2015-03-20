@@ -17,40 +17,19 @@ function migrate {
   be rake db:test:prepare
 }
 
-# all-in-one simfy launch
-function simfy {
-  case $1 in
-  "help")
-    cat $ZSHCUSTOM/.help
-    ;;
-  "init")
-    init simfy
-    ;;
-  *)
-    cd $HOME/Projects/simfy
-    init simfy
-    git status
-    echo "run 'simfy help' for some hints"
-    ;;
-  esac
+function start-simfy {
+  ruby -v
+  start-mysql
+  start-redis
+  thor redis:start test
+  thor redis:start
 }
 
-# project-specific initializations
-function init {
-  case $1 in
-    "simfy")
-      ruby script/services start_redis ./tmp/redis/redis_development
-      ruby script/services start_redis ./tmp/redis/redis_test
-      ;;
-    "help")
-      echo "Help not available yet!"
-      angry_exit
-      ;;
-    *)
-      echo "Project not found!"
-      angry_exit
-      ;;
-  esac
+function stop-simfy {
+  thor redis:stop test
+  thor redis:stop
+  stop-redis
+  stop-mysql
 }
 
 # repeat a command n times
