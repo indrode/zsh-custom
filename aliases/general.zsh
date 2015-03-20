@@ -69,12 +69,16 @@ alias zc='zeus cucumber'
 alias br='bundle exec rspec'
 
 #mysql
-alias start-mysql='mysql.server start'
-alias stop-mysql='mysql.server stop'
+alias start-mysql='brew services start mysql'
+alias stop-mysql='brew services stop mysql'
+
+#postgres
+alias start-postgres='brew services start postgres'
+alias stop-postgres='brew services stop postgres'
 
 #redis
-alias start-redis='redis-server /usr/local/etc/redis.conf'
-alias stop-redis='redis-cli shutdown'
+alias start-redis='brew services start redis'
+alias stop-redis='brew services stop redis'
 
 #hal screensaver commands
 alias hal9000="cd /System/Library/Frameworks/ScreenSaver.framework/Resources && nohup ./ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &"
