@@ -80,11 +80,6 @@ alias stop-postgres='brew services stop postgres'
 alias start-redis='brew services start redis'
 alias stop-redis='brew services stop redis'
 
-#hal screensaver commands
-alias hal9000="cd /System/Library/Frameworks/ScreenSaver.framework/Resources && nohup ./ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine -background &"
-alias hal-exit="kill `ps -ef |grep ScreenSaverEngine|grep -v grep|awk {'print $2'}`"
-alias hal-pid="ps -ef |grep ScreenSaverEngine |cut -c 6-"
-
 #stuff found online http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias quiet="osascript -e 'set volume 0.5'"
