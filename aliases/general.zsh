@@ -10,7 +10,7 @@ alias notify='terminal-notifier -message'
 
 #ultimate grep
 #grep history for 'sudo' ---> hh G sudo
-alias -g G='| grep --color=auto -i'
+alias G='| grep --color=auto -i'
 
 #command upgrades
 alias cp='cp -v'
@@ -52,7 +52,7 @@ alias ........='cd ../../../../../../..'
 alias .........='cd ../../../../../../../..'
 alias ..........='cd ../../../../../../../../..'
 alias ls='ls -G'
-alias l='ls -l'
+alias l='ls -lha'
 alias ll='ls -lha'
 alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists then if target of window 1 as string is not \":\" then get POSIX path of (target of window 1 as alias)"`'
 
@@ -67,6 +67,7 @@ alias zr='zeus rspec'
 alias zc='zeus cucumber'
 
 #workflow
+alias r='bundle exec rspec'
 alias br='bundle exec rspec'
 
 #mysql

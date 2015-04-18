@@ -12,11 +12,6 @@ function staging-deploy! {
   bundle exec cap staging deploy
 }
 
-function migrate {
-  be rake db:migrate
-  be rake db:test:prepare
-}
-
 function start-simfy {
   ruby -v
   start-mysql
