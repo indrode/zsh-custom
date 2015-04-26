@@ -92,7 +92,7 @@ if [ "$RUBY_MANAGER" = "chruby" ]
   then
   source /usr/local/opt/chruby/share/chruby/chruby.sh
   source /usr/local/share/chruby/auto.sh
-  chruby 2.2.1
+  chruby 2.2.2
 fi
 
 if [ "$RUBY_MANAGER" = "rbenv" ]
