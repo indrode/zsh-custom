@@ -7,5 +7,8 @@ export EDITOR=subl
 # name of ruby manager, e.g. chruby, rbenv
 export RUBY_MANAGER='chruby'
 
+# default ruby version
+export DEFAULT_RUBY='2.2.2'
+
 # hard drive used prompt
 export MAIN_HD='/dev/disk1'
