@@ -18,6 +18,7 @@
 
 local returned_error="%(?..%{$fg[red]%}⚡ %{$reset_color%})"
 
+# add with: $(battery_charge)
 function battery_charge {
   #python ~/Projects/code/python/batcharge.py
 }
@@ -36,10 +37,14 @@ function current_trash_size {
   du -h ~/.Trash | tail -n1 | cut -f 1 | tr -d ' '
 }
 
+function ruby_version {
+  ruby -v | cut -f2 -d ' '
+}
+
 PROMPT='
 %{$fg[yellow]%}✈ %{$fg_bold[green]%} %~$(git_prompt_info) %{$fg_bold[yellow]%}%%%{$reset_color%}%b ${returned_error}'
 
-RPROMPT='$(battery_charge) %{$fg[yellow]%}[%*]%{$reset_color%} %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
+RPROMPT='[$(ruby_version)] %{$fg[yellow]%}[%*]%{$reset_color%} %{$fg[magenta]%}$(available_disk_space)(+$(current_trash_size))%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}%{$fg[yellow]%}["
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[yellow]%}]%{$reset_color%}"
