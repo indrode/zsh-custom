@@ -80,6 +80,10 @@ fi
 . ~/.oh-my-zsh/custom/functions/general.zsh
 . ~/.oh-my-zsh/custom/functions/dev.zsh
 
+# display archey info
+# brew install archey
+archey -c
+
 if [ -f "$ZSH/custom/settings/intro" ]; then
   echo "${txtylw}"
   cat $ZSH/custom/settings/intro
