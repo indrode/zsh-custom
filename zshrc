@@ -119,4 +119,8 @@ if [ -f "$HOME/.todos" ]; then
   . "$HOME/.todos"
 fi
 
+# use autojump
+# brew install autojump
+[[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
+
 unalias mysql
