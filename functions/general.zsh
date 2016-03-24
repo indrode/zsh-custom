@@ -167,3 +167,7 @@ function space {
   cat ~/.space
   rm ~/.space
 }
+
+function folder-sizes {
+  find . -maxdepth 1 -type d -mindepth 1 -exec du -hs {} \;
+}
