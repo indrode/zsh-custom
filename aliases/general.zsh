@@ -16,6 +16,9 @@ alias G='| grep --color=auto -i'
 alias cp='cp -v'
 alias mv='mv -v'
 
+#history cleaners
+alias cd=' ls'
+
 #chruby
 alias r193="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-1.9.3"
 alias r200="source /usr/local/opt/chruby/share/chruby/chruby.sh && chruby ruby-2.0.0"
@@ -59,6 +62,7 @@ alias cdf='cd `osascript -e "tell application \"Finder\" to if window 1 exists t
 #tools
 alias lastfm='ruby ~/projects/code/ruby/recent_scrobbles.rb $1'
 alias init-transfer='bash $ZSHCUSTOM/scripts/zsh-watch_outgoing.sh &'
+alias start-spotify="ssh soma 'open /Applications/Spotify.app'"
 
 #zeus
 alias z='zeus'
