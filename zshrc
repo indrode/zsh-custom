@@ -123,4 +123,8 @@ fi
 # brew install autojump
 [[ -s $(brew --prefix)/etc/profile.d/autojump.sh ]] && . $(brew --prefix)/etc/profile.d/autojump.sh
 
+# create tmp folder for Sidekiq
+mkdir -p /tmp/sidekiq
+
 unalias mysql
+
