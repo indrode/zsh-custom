@@ -10,6 +10,11 @@ function clean-trash {
   rm -Rf ~/.Trash/*
 }
 
+# cd and ls
+function cdl() {
+  cd $1 && ls -trahl
+}
+
 # gitio script to shorten urls from command line
 # see: https://gist.github.com/defunkt/1209316
 function gitio {
