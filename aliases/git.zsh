@@ -5,7 +5,7 @@
 # 1. basic flow
 alias g='git'
 alias gs='git status'
-alias gpl='git pull'
+# alias gpl='git pull' # see function
 alias gpush='git push'
 alias ga='git add'
 alias gd='git diff'
