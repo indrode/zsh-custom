@@ -127,4 +127,5 @@ fi
 mkdir -p /tmp/sidekiq
 
 unalias mysql
-
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/Projects/hd/shared/bash_helpers.sh
