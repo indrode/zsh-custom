@@ -70,7 +70,7 @@ alias zr='zeus rspec'
 alias zc='zeus cucumber'
 
 #workflow
-alias r='bundle exec rspec'
+#alias r='bundle exec rspec'
 alias br='bundle exec rspec'
 alias s='spring'
 alias rs='rake spec'
