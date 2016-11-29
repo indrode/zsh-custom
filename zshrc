@@ -42,7 +42,7 @@ COMPLETION_WAITING_DOTS="true"
 # see: https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
 # custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # example format: plugins=(rails git textmate ruby lighthouse bundler)
-plugins=(git brew osx gem zsh-syntax-highlighting)
+plugins=(git brew osx gem zsh-syntax-highlighting zsh-completions)
 
 # oh-my-zsh
 source $ZSH/oh-my-zsh.sh
@@ -62,6 +62,10 @@ export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/casks"
+export HOMEBREW_BUILD_FROM_SOURCE=1
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_EMOJI=1
+export HOMEBREW_NO_ANALYTICS=1
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
@@ -128,4 +132,6 @@ mkdir -p /tmp/sidekiq
 
 unalias mysql
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/Projects/hd/shared/bash_helpers.sh
+source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+
+autoload -U compinit && compinit
