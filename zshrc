@@ -67,6 +67,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_EMOJI=1
 export HOMEBREW_NO_ANALYTICS=1
 export VAULT_TOKEN=`cat ~/.vault-token`
+export VAULT_ADDR=https://vault.homeday.de:8200
 
 # skip commands in .zsh_nocorrect (aka blacklisted)
 # HINT: use 'blacklist my_word' to add commands to the list
