@@ -2,6 +2,14 @@
 # - functions to assist development -
 # -----------------------------------
 
+function tail-hd {
+  pssh -H hd1 -H hd2 -H hd-sidekiq -t 100000000 -P "tail -f /srv/www/homeday/shared/log/system.log"
+}
+
+function tail-sg {
+  pssh -H sg1 -H sg2 -H sg-sidekiq -t 100000000 -P "tail -f /srv/www/suggestor/shared/log/system.log"
+}
+
 function deploy! {
   git log -1 --pretty=%H | pbcopy
   bundle exec cap production deploy
