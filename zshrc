@@ -60,7 +60,7 @@ export NODE_PATH="/usr/local/lib/node_modules"
 export RUBYOPT="rubygems"
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:/usr/local/git/bin:/Applications/Postgres.app/Contents/Versions/9.6/bin/
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/casks"
 export HOMEBREW_BUILD_FROM_SOURCE=1
 export HOMEBREW_NO_AUTO_UPDATE=1
@@ -83,12 +83,13 @@ fi
 # load aliases and functions
 . ~/.oh-my-zsh/custom/aliases/general.zsh
 . ~/.oh-my-zsh/custom/aliases/git.zsh
+. ~/.oh-my-zsh/custom/aliases/hd.zsh
 . ~/.oh-my-zsh/custom/functions/general.zsh
 . ~/.oh-my-zsh/custom/functions/dev.zsh
 
 # display archey info
 # brew install archey
-archey -c
+# archey -c
 
 if [ -f "$ZSH/custom/settings/intro" ]; then
   echo "${txtylw}"
@@ -134,6 +135,7 @@ mkdir -p /tmp/sidekiq
 
 unalias mysql
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
+# source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 
 autoload -U compinit && compinit
+
