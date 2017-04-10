@@ -137,3 +137,5 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # source /usr/local/share/zsh-navigation-tools/zsh-navigation-tools.plugin.zsh
 
 autoload -U compinit && compinit
+
+eval $(thefuck --alias)
