@@ -139,3 +139,5 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 autoload -U compinit && compinit
 
 eval $(thefuck --alias)
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
