@@ -42,3 +42,18 @@ alias gfix="git amend -C HEAD"
 # 4. github
 alias github-status="curl https://status.github.com/api/last-message.json"
 alias github-fullstatus="curl https://status.github.com/api/messages.json"
+
+function gupd {
+  NUM_STASHES=$(git stash list | wc -l)
+  CURRENT_BRANCH=$(git branch --show-current)
+  git stash
+  git checkout master
+  git pull
+  git checkout $CURRENT_BRANCH
+
+  NEW_NUM_STASHES=$(git stash list | wc -l)
+  if [ NUM_STASHES != NEW_NUM_STASHES ]
+  then
+    git stash pop
+  fi
+}
