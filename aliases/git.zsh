@@ -4,11 +4,13 @@
 
 # 1. basic flow
 alias g='git'
-alias gs='git status'
-alias gpl='git pull'
+alias gs=' git status'
+alias gpl=' git pull'
 alias gpush='git push'
 alias ga='git add'
-alias gd='git diff'
+alias gco=' git checkout'
+alias gcom=' git checkout master'
+alias gd=' git diff'
 alias gcommit='git commit -v'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log -1 --stat --pretty=oneline'
