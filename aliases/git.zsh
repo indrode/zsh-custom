@@ -50,6 +50,7 @@ function gupd {
   git checkout master
   git pull
   git checkout $CURRENT_BRANCH
+  git merge master
 
   NEW_NUM_STASHES=$(git stash list | wc -l)
   if [ NUM_STASHES != NEW_NUM_STASHES ]
