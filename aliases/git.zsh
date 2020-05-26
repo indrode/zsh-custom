@@ -6,7 +6,7 @@
 alias g='git'
 alias gs=' git status'
 alias gpl=' git pull'
-alias gpush='git push'
+alias gp='git push'
 alias ga='git add'
 alias gco=' git checkout'
 alias gcom=' git checkout master'
