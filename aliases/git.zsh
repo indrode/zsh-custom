@@ -11,7 +11,7 @@ alias ga='git add'
 alias gco=' git checkout'
 alias gcom=' git checkout master'
 alias gd=' git diff'
-alias gcommit='git commit -v'
+alias gitc='git commit -S -v'
 alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 alias gll='git log -1 --stat --pretty=oneline'
 alias gb='git branch'
